@@ -46,7 +46,7 @@ INSERT INTO `position_item` (`id`, `position_Name`) VALUES
 (7, 'Individu');
 
 -- --------------------------------------------------------
-
+-- cobain
 --
 -- Table structure for table `po_item_itembase`
 --
