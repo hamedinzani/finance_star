@@ -1,0 +1,68 @@
+<div class="container">
+
+    <!-- Outer Row -->
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-lg">
+
+                <div class="card shadow-lg border-0 rounded-lg mt-5 c0l-lg">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+                            <div class="col"><img src="<?= base_url('assets'); ?>/img/login.jpg" class="img-fluid" alt="Responsive image"></div>
+                            <div class="col-lg-7">
+                                <div class="p-5">
+                                    <div class="text-left">
+                                        <h1 class="text-gray-900 mb-4 font-weight-bold">Log In to continue</h1>
+
+                                    </div>
+                                    <hr>
+                                    <div class="text-left">
+                                        Please Log in using that account registered on the website.
+                                    </div>
+                                    <div>
+                                        <hr>
+                                    </div>
+                                    <form class="user">
+
+                                        <div class="form-group">
+                                            <label for="username" class="col-lg-4 col-form-label font-weight-bold">Email</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                                                </div>
+                                                <input type="text" class="form-control form-control-user" id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-lg-4 col-form-label font-weight-bold">Password</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fas fa-key"></i></i></div>
+                                                </div>
+                                                <input type="text" class="form-control form-control-user" id="password" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="mx-auto" style="width: 200px;">
+                                            <a href="index.html" class="btn btn-dark btn-user justify-center">
+                                                Login In My Account
+                                            </a>
+                                        </div>
+                                        <hr>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>

@@ -10,4 +10,10 @@ class Auth extends CI_Controller
         $this->load->view('dashboard/index.php');
         $this->load->view('templates/footer.php');
     }
+    public function login()
+    {
+        $this->load->view('templates/auth_header.php');
+        $this->load->view('auth/login.php');
+        $this->load->view('templates/auth_footer.php');
+    }
 }
