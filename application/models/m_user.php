@@ -1,6 +1,44 @@
 <?php 
 
 class M_user extends CI_Model{
+
+    private $_table = "user";
+
+    function doLogin(){
+		$post = $this->input->post();
+
+        // cari user berdasarkan email dan username
+        $this->db->where('email_Address', $post["email"])
+                ->or_where('user_Name', $post["email"]);
+        $user = $this->db->get($this->_table)->row();
+       print_r($user);
+        echo "pass input = ".$post["password"];
+        echo " pass betul = ".$user->pass_Word;
+
+        // jika user terdaftar
+        if($user){
+            // periksa password-nya
+            // $isPasswordTrue = password_verify($post["password"], $user->pass_Word);
+
+            // jika password benar dan dia admin
+            if($post["password"]===$user->pass_Word){ 
+                // login sukses yay!
+                $this->session->set_userdata('user_logged', $user);
+                $this->_updateLastLogin($user->id_User);
+                redirect(site_url('user/index'));
+            } else {echo " password salah";}
+        } else {echo " username salah";}
+    }
+
+    function isNotLogin(){
+        return $this->session->userdata('user_logged') === null;
+    }
+
+    function _updateLastLogin($user_id){
+        $sql = "UPDATE {$this->_table} SET last_Login=now() WHERE id_User='".$user_id."'";
+        $this->db->query($sql);
+    }
+
 	function tampil_data_user(){
         $this->db->select('*');
         $this->db->from('user u'); 
@@ -8,6 +46,7 @@ class M_user extends CI_Model{
         $this->db->join('status_item s', 's.id=u.id_Status', 'left');
 		return $query = $this->db->get();
 	}
+
     function ambil_data_status(){
 		return $query = $this->db->get('status_item');
 	}
