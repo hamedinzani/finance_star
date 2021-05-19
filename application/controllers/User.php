@@ -6,6 +6,7 @@ class User extends CI_Controller
     function __construct(){
 		parent::__construct();		
 		$this->load->model('m_user');
+        if($this->m_user->isNotLogin()) redirect(site_url('auth/login'));
         $this->load->helper(array('form', 'url'));
 	}
 

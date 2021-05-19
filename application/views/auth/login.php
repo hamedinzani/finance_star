@@ -25,31 +25,29 @@
                                     <div>
                                         <hr>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="<?= site_url('auth/index') ?>" method="POST">
 
                                         <div class="form-group">
-                                            <label for="username" class="col-lg-4 col-form-label font-weight-bold">Email</label>
+                                            <label for="email" class="col-lg-4 col-form-label font-weight-bold">Email</label>
                                             <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-user" id="email" placeholder="Email">
+                                                <input type="text" class="form-control form-control-user" id="email" placeholder="Email" name="email">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="username" class="col-lg-4 col-form-label font-weight-bold">Password</label>
+                                            <label for="password" class="col-lg-4 col-form-label font-weight-bold">Password</label>
                                             <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fas fa-key"></i></i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-user" id="password" placeholder="Username">
+                                                <input type="password" class="form-control form-control-user" id="password" placeholder="password" name="password">
                                             </div>
                                         </div>
                                         <hr>
                                         <div class="mx-auto" style="width: 200px;">
-                                            <a href="index.html" class="btn btn-dark btn-user justify-center">
-                                                Login In My Account
-                                            </a>
+                                            <input type="submit" value="Login In My Account" class="btn btn-dark btn-user justify-center">
                                         </div>
                                         <hr>
                                     </form>
