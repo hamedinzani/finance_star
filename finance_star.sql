@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2021 at 04:18 PM
+-- Generation Time: May 19, 2021 at 07:17 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -46,7 +46,7 @@ INSERT INTO `position_item` (`id`, `position_Name`) VALUES
 (7, 'Individu');
 
 -- --------------------------------------------------------
--- cobain
+
 --
 -- Table structure for table `po_item_itembase`
 --
@@ -177,15 +177,19 @@ CREATE TABLE `user` (
   `email_Address` varchar(30) NOT NULL,
   `id_Position` int(11) NOT NULL,
   `id_Status` int(11) NOT NULL,
-  `profile_Photo` text NOT NULL
+  `profile_Photo` text NOT NULL,
+  `last_Login` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `is_active` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_User`, `user_Name`, `pass_Word`, `full_Name`, `email_Address`, `id_Position`, `id_Status`, `profile_Photo`) VALUES
-('STR001', 'admin', 'Admin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG');
+INSERT INTO `user` (`id_User`, `user_Name`, `pass_Word`, `full_Name`, `email_Address`, `id_Position`, `id_Status`, `profile_Photo`, `last_Login`, `created_at`, `is_active`) VALUES
+('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-05-19 17:13:29', '2021-05-19 14:10:03', 0),
+('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 7, 1, 'STR002.jpg', '2021-05-19 17:12:50', '2021-05-19 17:12:39', 0);
 
 --
 -- Indexes for dumped tables
