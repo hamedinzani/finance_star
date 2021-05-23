@@ -1,4 +1,4 @@
-<?php $userdata = $this->session->userdata('user_logged');?>
+<?php $userdata = $this->session->userdata('user_logged'); ?>
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -9,20 +9,29 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index">
             <div class="sidebar-brand-icon rotate-n-15">
-                <!-- <img class="img-profile rounded-circle" src="<?= base_url('assets/img/').$userdata->profile_Photo; ?>"> -->
+                <!-- <img class="img-profile rounded-circle" src="<?= base_url('assets/img/') . $userdata->profile_Photo; ?>"> -->
             </div>
-            <div class="sidebar-brand-text mx-3"><?php echo $userdata->full_Name;?></div><a align='center'><?php
-            
-            if($userdata->id_Position=='1'){echo 'Project Manager';}
-            elseif($userdata->id_Position=='2'){echo 'Top Management';}
-            elseif($userdata->id_Position=='3'){echo 'Finance';}
-            elseif($userdata->id_Position=='4'){echo 'Admin';}
-            elseif($userdata->id_Position=='5'){echo 'Sales';}
-            elseif($userdata->id_Position=='6'){echo 'Team';}
-            elseif($userdata->id_Position=='7'){echo 'Individu';}
-            else{echo 'nobody';}
+            <div class="sidebar-brand-text mx-3"><?php echo $userdata->full_Name; ?></div><a align='center'><?php
 
-            ?></a>
+                                                                                                            if ($userdata->id_Position == '1') {
+                                                                                                                echo 'Project Manager';
+                                                                                                            } elseif ($userdata->id_Position == '2') {
+                                                                                                                echo 'Top Management';
+                                                                                                            } elseif ($userdata->id_Position == '3') {
+                                                                                                                echo 'Finance';
+                                                                                                            } elseif ($userdata->id_Position == '4') {
+                                                                                                                echo 'Admin';
+                                                                                                            } elseif ($userdata->id_Position == '5') {
+                                                                                                                echo 'Sales';
+                                                                                                            } elseif ($userdata->id_Position == '6') {
+                                                                                                                echo 'Team';
+                                                                                                            } elseif ($userdata->id_Position == '7') {
+                                                                                                                echo 'Individu';
+                                                                                                            } else {
+                                                                                                                echo 'nobody';
+                                                                                                            }
+
+                                                                                                            ?></a>
             </>
 
 
@@ -44,102 +53,102 @@
                 MENUS
             </div>
 
-            <?php if($userdata->id_Position=='1'){ ?>
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span>Purchase Order</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Detail</h6>
-                        <a class="collapse-item" href="buttons.html">Word Base</a>
-                        <a class="collapse-item" href="cards.html">Item Base</a>
+            <?php if ($userdata->id_Position == '1') { ?>
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item active">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Purchase Order</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Detail</h6>
+                            <a class="collapse-item" href="buttons.html">Word Base</a>
+                            <a class="collapse-item" href="cards.html">Item Base</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
             <?php } ?>
 
-            <?php if($userdata->id_Position=='3'){ ?>
-            <!-- Nav Item - Pages Collapse Menu Invoice -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
-                    <i class="fas fa-file-invoice"></i>
-                    <span>Invoice</span>
-                </a>
-                <div id="collapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Detail</h6>
-                        <a class="collapse-item" href="buttons.html">Invoice In</a>
-                        <a class="collapse-item" href="cards.html">Invoice Out</a>
+            <?php if ($userdata->id_Position == '3') { ?>
+                <!-- Nav Item - Pages Collapse Menu Invoice -->
+                <li class="nav-item active">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Invoice</span>
+                    </a>
+                    <div id="collapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Detail</h6>
+                            <a class="collapse-item" href="buttons.html">Invoice In</a>
+                            <a class="collapse-item" href="cards.html">Invoice Out</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
             <?php } ?>
 
-            <?php if($userdata->id_Position=='2'){ ?>
-            <!-- Nav Item - Repoprt -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Report</span></a>
-            </li>
+            <?php if ($userdata->id_Position == '2') { ?>
+                <!-- Nav Item - Repoprt -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="charts.html">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Report</span></a>
+                </li>
 
-            <!-- Nav Item - Project -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-tasks"></i>
-                    <span>Project</span></a>
-            </li>
+                <!-- Nav Item - Project -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="charts.html">
+                        <i class="fas fa-tasks"></i>
+                        <span>Project</span></a>
+                </li>
             <?php } ?>
 
-            <?php if($userdata->id_Position=='3'){ ?>
-            <!-- Nav Item - BAST -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-copy"></i>
-                    <span>BAST</span></a>
-            </li>
+            <?php if ($userdata->id_Position == '3') { ?>
+                <!-- Nav Item - BAST -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="charts.html">
+                        <i class="fas fa-copy"></i>
+                        <span>BAST</span></a>
+                </li>
 
-            <!-- Nav Item - SEND -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-paper-plane"></i>
-                    <span>SEND</span></a>
-            </li>
+                <!-- Nav Item - SEND -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="charts.html">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>SEND</span></a>
+                </li>
             <?php } ?>
 
-            <?php if($userdata->id_Position=='6'||$userdata->id_Position=='7'){ ?>
-            <!-- Nav Item - Invoce Freelance -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-file-invoice"></i>
-                    <span>Invoice</span></a>
-            </li>
-            <?php } ?>
-            
-            <?php if($userdata->id_Position=='5'){ ?>
-            <!-- Nav Item - QUITATION -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="far fa-file-alt"></i>
-                    <span>Quitation</span></a>
-            </li>
+            <?php if ($userdata->id_Position == '6' || $userdata->id_Position == '7') { ?>
+                <!-- Nav Item - Invoce Freelance -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="charts.html">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Invoice</span></a>
+                </li>
             <?php } ?>
 
-            <?php if($userdata->id_Position=='4'){ ?>
-            <!-- Nav Item - User -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('user/list'); ?>">
-                    <i class="fas fa-user-friends"></i>
-                    <span>User</span></a>
-            </li>
+            <?php if ($userdata->id_Position == '5') { ?>
+                <!-- Nav Item - QUITATION -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo base_url('quitation/data'); ?>">
+                        <i class="far fa-file-alt"></i>
+                        <span>Quitation</span></a>
+                </li>
+            <?php } ?>
+
+            <?php if ($userdata->id_Position == '4') { ?>
+                <!-- Nav Item - User -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo base_url('user/list'); ?>">
+                        <i class="fas fa-user-friends"></i>
+                        <span>User</span></a>
+                </li>
             <?php } ?>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <!-- Nav Item - out -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="<?= site_url('auth/logout') ?>">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Log Out</span></a>
@@ -380,8 +389,8 @@
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $userdata->full_Name;?></span>
-                            <img class="img-profile rounded-circle" src="<?= base_url('assets/img/').$userdata->profile_Photo; ?>">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $userdata->full_Name; ?></span>
+                            <img class="img-profile rounded-circle" src="<?= base_url('assets/img/') . $userdata->profile_Photo; ?>">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
