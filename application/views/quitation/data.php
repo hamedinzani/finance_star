@@ -35,7 +35,7 @@
                         <td>@mdo</td>
                         <td>@mdo</td>
                         <td>
-                            <a href=""><?php echo anchor('user/edit', 'Edit', array('class' => 'btn btn-success btn-xs')); ?></a>
+                            <a href=""><?php echo anchor('quitation/edit', 'Edit', array('class' => 'btn btn-success btn-xs')); ?></a>
                             <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
 
                         </td>

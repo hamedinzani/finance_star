@@ -1,14 +1,14 @@
 -- phpMyAdmin SQL Dump
--- update
--- version 5.0.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 07:17 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.27
+-- Waktu pembuatan: 23 Bulan Mei 2021 pada 17.33
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `position_item`
+-- Struktur dari tabel `position_item`
 --
 
 CREATE TABLE `position_item` (
@@ -34,7 +34,7 @@ CREATE TABLE `position_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `position_item`
+-- Dumping data untuk tabel `position_item`
 --
 
 INSERT INTO `position_item` (`id`, `position_Name`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `position_item` (`id`, `position_Name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `po_item_itembase`
+-- Struktur dari tabel `po_item_itembase`
 --
 
 CREATE TABLE `po_item_itembase` (
@@ -65,7 +65,7 @@ CREATE TABLE `po_item_itembase` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `po_item_wordbase`
+-- Struktur dari tabel `po_item_wordbase`
 --
 
 CREATE TABLE `po_item_wordbase` (
@@ -84,7 +84,7 @@ CREATE TABLE `po_item_wordbase` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `purchase_order`
+-- Struktur dari tabel `purchase_order`
 --
 
 CREATE TABLE `purchase_order` (
@@ -108,7 +108,7 @@ CREATE TABLE `purchase_order` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quitation_item`
+-- Struktur dari tabel `quitation_item`
 --
 
 CREATE TABLE `quitation_item` (
@@ -124,7 +124,7 @@ CREATE TABLE `quitation_item` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quotation`
+-- Struktur dari tabel `quotation`
 --
 
 CREATE TABLE `quotation` (
@@ -144,7 +144,7 @@ CREATE TABLE `quotation` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status_item`
+-- Struktur dari tabel `status_item`
 --
 
 CREATE TABLE `status_item` (
@@ -153,7 +153,7 @@ CREATE TABLE `status_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `status_item`
+-- Dumping data untuk tabel `status_item`
 --
 
 INSERT INTO `status_item` (`id`, `status_Name`) VALUES
@@ -167,7 +167,7 @@ INSERT INTO `status_item` (`id`, `status_Name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -185,83 +185,87 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_User`, `user_Name`, `pass_Word`, `full_Name`, `email_Address`, `id_Position`, `id_Status`, `profile_Photo`, `last_Login`, `created_at`, `is_active`) VALUES
-('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-05-19 17:13:29', '2021-05-19 14:10:03', 0),
-('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 7, 1, 'STR002.jpg', '2021-05-19 17:12:50', '2021-05-19 17:12:39', 0);
+('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-05-23 15:30:34', '2021-05-19 14:10:03', 0),
+('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 7, 1, 'STR002.jpg', '2021-05-19 19:56:25', '2021-05-19 17:12:39', 0),
+('STR003', 'hamed', '1234', 'Ilham nur inzani', 'ilhaminzani@gmail.com', 5, 2, 'STR003.jpg', '2021-05-20 07:23:22', '2021-05-19 20:00:03', 0),
+('STR004', 'po', '1234', 'project manager', 'darewadwgmail.com', 1, 3, 'STR004.jpg', '2021-05-20 05:03:00', '2021-05-20 05:02:49', 0),
+('STR005', 'admin', '1234', 'project manager', 'adaadas', 4, 0, 'STR005.JPG', '2021-05-20 07:20:34', '2021-05-20 07:20:34', 0),
+('STR006', 'viro', '1234', 'delviro', 'viro@gmail.com', 4, 0, 'STR006.PNG', '2021-05-23 15:32:13', '2021-05-23 15:32:13', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `position_item`
+-- Indeks untuk tabel `position_item`
 --
 ALTER TABLE `position_item`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `po_item_itembase`
+-- Indeks untuk tabel `po_item_itembase`
 --
 ALTER TABLE `po_item_itembase`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `po_item_wordbase`
+-- Indeks untuk tabel `po_item_wordbase`
 --
 ALTER TABLE `po_item_wordbase`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `purchase_order`
+-- Indeks untuk tabel `purchase_order`
 --
 ALTER TABLE `purchase_order`
   ADD PRIMARY KEY (`no_Po`);
 
 --
--- Indexes for table `quitation_item`
+-- Indeks untuk tabel `quitation_item`
 --
 ALTER TABLE `quitation_item`
   ADD PRIMARY KEY (`id_q_num`);
 
 --
--- Indexes for table `quotation`
+-- Indeks untuk tabel `quotation`
 --
 ALTER TABLE `quotation`
   ADD PRIMARY KEY (`no_Quotation`);
 
 --
--- Indexes for table `status_item`
+-- Indeks untuk tabel `status_item`
 --
 ALTER TABLE `status_item`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_User`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `po_item_itembase`
+-- AUTO_INCREMENT untuk tabel `po_item_itembase`
 --
 ALTER TABLE `po_item_itembase`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `po_item_wordbase`
+-- AUTO_INCREMENT untuk tabel `po_item_wordbase`
 --
 ALTER TABLE `po_item_wordbase`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `quitation_item`
+-- AUTO_INCREMENT untuk tabel `quitation_item`
 --
 ALTER TABLE `quitation_item`
   MODIFY `id_q_num` int(11) NOT NULL AUTO_INCREMENT;
