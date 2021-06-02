@@ -101,7 +101,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-5" style="margin-left:auto;margin-right:auto">
             <div>
                 <table class="table table-bordered shadow">
                     <thead>
@@ -125,13 +125,13 @@
             <div class="text-left">
                 Total Cost &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0
             </div>
             <hr>
             <div class="text-left font-weight-bold">
                 Grand Total &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0
                 <hr>
             </div>
         </div>
