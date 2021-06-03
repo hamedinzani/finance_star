@@ -1,3 +1,4 @@
+<form method="POST" action="<?php echo base_url('quitation/edit_quitation');?>">
 <div class="container justify-content-start">
     <div class="row ">
         <div class="col">

@@ -28,12 +28,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php 
+		foreach($quotation as $q){ 
+		?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                        <th scope="row"><?php echo $q->no_Quotation; ?></th>
+                        <td><?php echo $q->client_Name; ?></td>
+                        <td><?php echo $q->project_Name; ?></td>
+                        <td><?php echo $q->cost; ?></td>
+                        <td><?php echo $q->grand_Total; ?></td>
                         <td>
                             <a href=""><?php echo anchor('quitation/edit', 'Edit', array('class' => 'btn btn-success btn-xs')); ?></a>
                             <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
@@ -41,162 +44,7 @@
                         </td>
 
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a href=""><input type="submit" class="btn btn-success btn-xs" name="edit" value="Edit"></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
-
-                        </td>
-                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
