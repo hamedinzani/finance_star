@@ -1,59 +1,47 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Purchase Order</a></li>
-        <li class="breadcrumb-item active" aria-current="page">ItemBase</li>
+        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="#">Invoice Out</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add Invoice Out</li>
     </ol>
 </nav>
 <div class="container justify-content-start">
     <div class="row ">
         <div class="col">
-            <label for="noquitation">No Purchase Order</label>
+            <label for="noquitation">No. Invoice</label>
             <input type="" class="form-control form-control-user" id="noquitation" name="noquitation" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="ps">Resource Name</label>
+            <label for="ps">Swift Code</label>
             <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="ps">Mobile Phone</label>
-            <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="">
-        </div>
-        <div class="col">
-            <label for="dd">Project Name Date</label>
-            <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
-            <input name="tanggal" id="tanggal" class="form-control form-control-user datepicker" id="dd" name="dd" aria-describedby="" placeholder="" type="text">
-        </div>
-
-    </div>
-</div>
-<br>
-<div class="container justify-content-start">
-    <div class="row">
-        <div class="col">
-            <label for="cn">PM Name</label>
-            <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="">
-        </div>
-        <div class="col">
-            <label for="Pm">Resource Email</label>
-            <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="">
-        </div>
-        <div class="col">
-            <label for="Duedate">Date</label>
+            <label for="Duedate">Due Date</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fas fa-calendar-alt"></i></i></div>
                 </div>
-                <input type="text" class="form-control form-control-user datepicker" id="date" name="date">
+                <input type="text" class="form-control form-control-user datepicker" id="dd" name="duedate">
             </div>
         </div>
+    </div>
+</div>
+<br>
+<div class="container justify-content-start">
+    <div class="row">
         <div class="col">
-            <label for="dd">No. Quitation</label>
-            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="" list="noqui">
-            <datalist id="noqui">
-                <option value="Boston">
-                <option value="Cambridge">
-            </datalist>
+            <label for="cn">No. PO</label>
+            <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="">
         </div>
+        <div class="col">
+            <label for="Pm">Address</label>
+            <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="">
+        </div>
+        <div class="col">
+            <label for="dd">Email</label>
+            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="">
+        </div>
+
 
     </div>
 </div>
@@ -61,44 +49,65 @@
 <div class="container justify-content-start">
     <div class="row">
         <div class="col">
-            <label for="cn">PM Email</label>
+            <label for="cn">Client Name</label>
             <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="Pm">Resource Status</label>
+            <label for="Pm">Down Payment</label>
             <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="dd">Rate</label>
+            <label for="dd">Tax</label>
             <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="">
         </div>
+
+
+
+    </div>
+</div>
+<br>
+<div class="container justify-content-start">
+    <div class="row">
         <div class="col">
-            <label for="dd"></label>
-            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="" style="display:none;">
+            <label for="cn">Account</label>
+            <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="">
         </div>
+        <div class="col">
+            <label for="Duedate">Invoice Date</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-alt"></i></i></div>
+                </div>
+                <input type="text" class="form-control form-control-user datepicker" id="ivd" name="invoicedate">
+            </div>
+        </div>
+        <div class="col">
+            <label for="dd">No. Rekening</label>
+            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="">
+        </div>
+
 
 
     </div>
 </div>
 <hr>
-<div class="col-lg-10" style="margin-left:auto;margin-right:auto">
+<div class="col-lg-10 " style="margin-left:auto;margin-right:auto">
     <div>
         <table class="table table-bordered shadow-lg">
             <!-- <table id=" example" class="display" style="width:100%"> -->
             <thead>
                 <tr>
-                    <th>Task</th>
-                    <th>Quantiti</th>
-                    <th>Rate</th>
-                    <th data-title="amount">
-                        <select name="statusSelect" id="statusSelect" class="form-control">
+                    <th>Job Description</th>
+                    <th>Qtt Words</th>
+                    <th>Unit Price</th>
+                    <th>
+                        <select name="statusSelect" id="statusSelect" class="form-control font-weight-bold">
                             <option selected="selected">Amount IDR</option>
                             <option>Amount US</option>
 
                         </select>
                     </th>
-                    </th>
-                    </th>
+
 
                 </tr>
             </thead>
@@ -110,7 +119,7 @@
                     <td><input type="text" id="price" name="price" value="" class="form-control"></td>
 
                     <td>
-                        <a href="<?php echo base_url('purchase/addrow'); ?>">
+                        <a href="<?php echo base_url('finance/addrow'); ?>">
                             <i class="fa fa-plus-circle" style="color:green"></i>
                             <a href="">
                                 <i class="fa fa-minus-circle" style="color:red"></i>
@@ -162,19 +171,31 @@
 
             </table>
         </div>
+        <div align="center">
+            <button type="button" class="btn btn-success btn-lg">Save</button>
+        </div>
     </div>
     <div class="col-lg-6">
         <hr>
-        <div class="text-left font-weight-bold">
-            Grand Total &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <div class="">
+            Total Cost &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0
+            <hr>
+        </div>
+        <div class="">
+            PPh 23 (-2%) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0
+            <hr>
+        </div>
+        <div class="text-left font-weight-bold">
+            Grand Total&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0
             <hr>
         </div>
     </div>
 </div>
-<div class="container justify-content-center">
-    <button type="button" class="btn btn-success btn-lg">Save</button>
-    <button type="button" class="btn btn-danger btn-lg">Send Email</button>
-</div>
+
 </div>

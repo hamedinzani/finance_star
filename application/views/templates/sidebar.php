@@ -82,8 +82,8 @@
                     <div id="collapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Detail</h6>
-                            <a class="collapse-item" href="buttons.html">Invoice In</a>
-                            <a class="collapse-item" href="cards.html">Invoice Out</a>
+                            <a class="collapse-item" href="<?php echo base_url('finance/datainvoicein'); ?>">Invoice In</a>
+                            <a class="collapse-item" href="<?php echo base_url('finance/datainvoiceout'); ?>">Invoice Out</a>
                         </div>
                     </div>
                 </li>
@@ -124,7 +124,12 @@
             <?php if ($userdata->id_Position == '6' || $userdata->id_Position == '7') { ?>
                 <!-- Nav Item - Invoce Freelance -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="<?= site_url('freelance/dashboard') ?>">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo base_url('freelance/invoice'); ?>">
                         <i class="fas fa-file-invoice"></i>
                         <span>Invoice</span></a>
                 </li>

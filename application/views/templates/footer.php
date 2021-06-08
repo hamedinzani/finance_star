@@ -55,9 +55,20 @@
             <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
             <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
             <script src="<?= base_url('assets/'); ?>datatables/datatables.min.js"></script>
+            <script src="<?= base_url('assets/'); ?>datatables/datatables.min.js"></script>
             <script type="text/javascript">
                 $(document).ready(function() {
                     $('#datatables').DataTable();
+                });
+            </script>
+            <script src="<?php echo base_url('assets/datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.datepicker').datepicker({
+                        format: 'yyyy-mm-dd',
+                        autoclose: true,
+                        todayHighlight: true,
+                    });
                 });
             </script>
 
