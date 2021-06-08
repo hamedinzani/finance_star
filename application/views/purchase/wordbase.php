@@ -19,7 +19,7 @@
             <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="dd">Project Name Date</label>
+            <label for="dd">Project Name</label>
             <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
             <input name="tanggal" id="tanggal" class="form-control form-control-user datepicker" id="dd" name="dd" aria-describedby="" placeholder="" type="text">
         </div>
@@ -38,8 +38,13 @@
             <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="dd">Date </label>
-            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="">
+            <label for="Duedate">Date</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-alt"></i></i></div>
+                </div>
+                <input type="text" class="form-control form-control-user datepicker" id="date" name="date">
+            </div>
         </div>
         <div class="col">
             <label for="dd">Type PO</label>
@@ -87,7 +92,7 @@
             <thead>
                 <tr>
                     <th>Match Word</th>
-                    <th>Word Count
+                    <th>Word Count</th>
                     <th>Weight</th>
                     <th>Weight Word Count <select id="cost" name="cost">
                             <option value="IDR" selected="selected">
