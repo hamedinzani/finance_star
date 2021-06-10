@@ -29,23 +29,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php 
-		foreach($user as $u){ 
-		?>
-                    <tr>
-                        <th scope="row"><?php echo $u->id_User ?></th>
-                        <td><?php echo $u->user_Name ?></td>
-                        <td><?php echo $u->pass_Word ?></td>
-                        <td><?php echo $u->full_Name ?></td>
-                        <td><?php echo $u->position_Name ?></td>
-                        <td><?php echo $u->status_Name ?></td>
-                        <td>
-                            <a href=""><?php echo anchor('user/edit/'.$u->id_User, 'Edit', array('class' => 'btn btn-success btn-xs')); ?></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('user/delete/'.$u->id_User);?>" class="hapus btn btn-danger btn-xs">Hapus</a>
+                    <?php
+                    foreach ($user as $u) {
+                    ?>
+                        <tr>
+                            <th scope="row"><?php echo $u->id_User ?></th>
+                            <td><?php echo $u->user_Name ?></td>
+                            <td><?php echo $u->pass_Word ?></td>
+                            <td><?php echo $u->full_Name ?></td>
+                            <td><?php echo $u->position_Name ?></td>
+                            <td><?php echo $u->status_Name ?></td>
+                            <td>
+                                <a href="<?php echo base_url('user/edit/' . $u->id_User); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
+                                <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('user/delete/' . $u->id_User); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
+                            </td>
 
-                        </td>
-
-                    </tr>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>

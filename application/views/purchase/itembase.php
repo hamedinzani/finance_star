@@ -19,7 +19,7 @@
             <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="dd">Project Name Date</label>
+            <label for="dd">Project Name</label>
             <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
             <input name="tanggal" id="tanggal" class="form-control form-control-user datepicker" id="dd" name="dd" aria-describedby="" placeholder="" type="text">
         </div>
@@ -162,6 +162,12 @@
 
             </table>
         </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+            <a href="<?php echo base_url('itembase/save'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+            <a>&emsp;&emsp;</a>
+            <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
+        </div>
     </div>
     <div class="col-lg-6">
         <hr>
@@ -173,8 +179,5 @@
         </div>
     </div>
 </div>
-<div class="container justify-content-center">
-    <button type="button" class="btn btn-success btn-lg">Save</button>
-    <button type="button" class="btn btn-danger btn-lg">Send Email</button>
-</div>
+
 </div>

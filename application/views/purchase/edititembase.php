@@ -19,7 +19,7 @@
             <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="dd">Project Name Date</label>
+            <label for="dd">Project Name</label>
             <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
             <input name="tanggal" id="tanggal" class="form-control form-control-user datepicker" id="dd" name="dd" aria-describedby="" placeholder="" type="text">
         </div>
@@ -38,12 +38,21 @@
             <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="dd">Date </label>
-            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="">
+            <label for="Duedate">Date</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-alt"></i></i></div>
+                </div>
+                <input type="text" class="form-control form-control-user datepicker" id="date" name="date">
+            </div>
         </div>
         <div class="col">
             <label for="dd">No. Quitation</label>
-            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="">
+            <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="" list="noqui">
+            <datalist id="noqui">
+                <option value="Boston">
+                <option value="Cambridge">
+            </datalist>
         </div>
 
     </div>
@@ -81,25 +90,24 @@
                     <th>Task</th>
                     <th>Quantiti</th>
                     <th>Rate</th>
-                    <th>Amount <select id="cost" name="cost">
-                            <option value="IDR" selected="selected">
-                                IDR
-                            </option>
-                            <option value="US">
-                                US
-                            </option>
+                    <th data-title="amount">
+                        <select name="statusSelect" id="statusSelect" class="form-control">
+                            <option selected="selected">Amount IDR</option>
+                            <option>Amount US</option>
 
-                        </select></th>
+                        </select>
+                    </th>
+                    </th>
                     </th>
 
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" id="jobdesc" name="jobdesc" value=""></td>
-                    <td><input type="text" id="volume" name="volume" value=""></td>
-                    <td><input type="text" id="unit" name="unit" value=""></td>
-                    <td><input type="text" id="price" name="price" value=""></td>
+                    <td><input type="text" id="jobdesc" name="jobdesc" value="" class="form-control"></td>
+                    <td><input type="text" id="volume" name="volume" value="" class="form-control"></td>
+                    <td><input type="text" id="unit" name="unit" value="" class="form-control"></td>
+                    <td><input type="text" id="price" name="price" value="" class="form-control"></td>
 
                     <td>
                         <a href="<?php echo base_url('purchase/addrow'); ?>">
@@ -109,10 +117,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="jobdesc" name="jobdesc" value=""></td>
-                    <td><input type="text" id="volume" name="volume" value=""></td>
-                    <td><input type="text" id="unit" name="unit" value=""></td>
-                    <td><input type="text" id="price" name="price" value=""></td>
+                    <td><input type="text" id="jobdesc" name="jobdesc" value="" class="form-control"></td>
+                    <td><input type="text" id="volume" name="volume" value="" class="form-control"></td>
+                    <td><input type="text" id="unit" name="unit" value="" class="form-control"></td>
+                    <td><input type="text" id="price" name="price" value="" class="form-control"></td>
 
                     <td>
 
@@ -154,6 +162,12 @@
 
             </table>
         </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+            <a href="<?php echo base_url('itembase/save'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+            <a>&emsp;&emsp;</a>
+            <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
+        </div>
     </div>
     <div class="col-lg-6">
         <hr>
@@ -165,8 +179,5 @@
         </div>
     </div>
 </div>
-<div class="container justify-content-center">
-    <button type="button" class="btn btn-success btn-lg">Save</button>
-    <button type="button" class="btn btn-danger btn-lg">Send Email</button>
-</div>
+
 </div>

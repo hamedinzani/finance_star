@@ -9,9 +9,13 @@
             <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="dd">Due Date</label>
-            <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
-            <input name="tanggal" id="tanggal" class="form-control form-control-user datepicker" id="dd" name="dd" aria-describedby="" placeholder="" type="text">
+            <label for="Duedate">Due Date</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-alt"></i></i></div>
+                </div>
+                <input type="text" class="form-control form-control-user datepicker" id="dd" name="duedate">
+            </div>
         </div>
 
     </div>
@@ -23,8 +27,13 @@
             <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="">
         </div>
         <div class="col">
-            <label for="Pm">Project Start</label>
-            <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="">
+            <label for="projectstart">Project Start</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-alt"></i></i></div>
+                </div>
+                <input type="text" class="form-control form-control-user datepicker" id="ps" name="projectstart">
+            </div>
         </div>
         <div class="col">
             <label for="dd">Client's Email</label>
@@ -41,36 +50,28 @@
             <thead>
                 <tr>
                     <th>Job Description</th>
-                    <th>Volume<select id="cost" name="cost">
-                            <option value="IDR" selected="selected">
-                                IDR
-                            </option>
-                            <option value="US">
-                                US
-                            </option>
+                    <th><select name="statusSelect" id="statusSelect" class="form-control font-weight-bold">
+                            <option selected="selected">Volume IDR</option>
+                            <option>Volume US</option>
 
-                        </select></th>
+                        </select>
                     <th>Unit</th>
                     <th>Price/Unit</th>
-                    <th>Cost In<select id="cost" name="cost">
-                            <option value="IDR" selected="selected">
-                                IDR
-                            </option>
-                            <option value="US">
-                                US
-                            </option>
+                    <th><select name="statusSelect" id="statusSelect" class="form-control font-weight-bold">
+                            <option selected="selected">Cost IDR</option>
+                            <option>Cost US</option>
 
-                        </select></th>
+                        </select>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" id="jobdesc" name="jobdesc" value=""></td>
-                    <td><input type="text" id="volume" name="volume" value=""></td>
-                    <td><input type="text" id="unit" name="unit" value=""></td>
-                    <td><input type="text" id="price" name="price" value=""></td>
-                    <td><input type="text" id="cost" name="cost" value=""></td>
+                    <td><input type="text" id="jobdesc" name="jobdesc" value="" class="form-control"></td>
+                    <td><input type="text" id="volume" name="volume" value="" class="form-control"></td>
+                    <td><input type="text" id="unit" name="unit" value="" class="form-control"></td>
+                    <td><input type="text" id="price" name="price" value="" class="form-control"></td>
+                    <td><input type="text" id="cost" name="cost" value="" class="form-control"></td>
                     <td>
                         <a href="<?php echo base_url('quitation/addrow'); ?>">
                             <i class="fa fa-plus-circle" style="color:green"></i>
@@ -79,11 +80,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="jobdesc" name="jobdesc" value=""></td>
-                    <td><input type="text" id="volume" name="volume" value=""></td>
-                    <td><input type="text" id="unit" name="unit" value=""></td>
-                    <td><input type="text" id="price" name="price" value=""></td>
-                    <td><input type="text" id="cost" name="cost" value=""></td>
+                    <td><input type="text" id="jobdesc" name="jobdesc" value="" class="form-control"></td>
+                    <td><input type="text" id="volume" name="volume" value="" class="form-control"></td>
+                    <td><input type="text" id="unit" name="unit" value="" class="form-control"></td>
+                    <td><input type="text" id="price" name="price" value="" class="form-control"></td>
+                    <td><input type="text" id="cost" name="cost" value="" class="form-control"></td>
                     <td>
 
                         <a href="<?php echo base_url('quitation/addrow'); ?>">
@@ -120,6 +121,12 @@
 
                 </table>
             </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+                <a href="<?php echo base_url('quitation/save'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+                <a>&emsp;&emsp;</a>
+                <a href="<?php echo base_url('quitation/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
+            </div>
         </div>
         <div class="col-lg-6">
             <div class="text-left">
@@ -135,10 +142,6 @@
                 <hr>
             </div>
         </div>
-    </div>
-    <div class="container justify-content-center">
-        <button type="button" class="btn btn-success btn-lg">Save</button>
-        <button type="button" class="btn btn-danger btn-lg">Send Email</button>
     </div>
 </div>
 </div>

@@ -7,6 +7,7 @@
             <div class="col-lg">
 
                 <div class="card shadow-lg border-0 rounded-lg mt-5 c0l-lg">
+                    <?= $this->session->flashdata('message'); ?>
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -25,6 +26,7 @@
                                     <div>
                                         <hr>
                                     </div>
+                                    <?= $this->session->flashdata('message'); ?>
                                     <form class="user" action="<?= site_url('auth/index') ?>" method="POST">
 
                                         <div class="form-group">
@@ -34,6 +36,7 @@
                                                     <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                                                 </div>
                                                 <input type="text" class="form-control form-control-user" id="email" placeholder="Email" name="email">
+                                                <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="form-group">
