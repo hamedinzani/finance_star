@@ -75,57 +75,40 @@
 <hr>
 <div class="col-lg-10" style="margin-left:auto;margin-right:auto">
     <div>
-        <table class="table table-bordered shadow-lg">
+    <table class="table table-bordered shadow-lg" id="dynamicAddRemove">
             <!-- <table id=" example" class="display" style="width:100%"> -->
             <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Quantiti</th>
-                    <th>Rate</th>
-                    <th>Amount <select id="cost" name="cost">
-                            <option value="IDR" selected="selected">
-                                IDR
-                            </option>
-                            <option value="US">
-                                US
-                            </option>
-
-                        </select></th>
-                    </th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" id="jobdesc" name="jobdesc" value=""></td>
-                    <td><input type="text" id="volume" name="volume" value=""></td>
-                    <td><input type="text" id="unit" name="unit" value=""></td>
-                    <td><input type="text" id="price" name="price" value=""></td>
-
-                    <td>
-                        <a href="<?php echo base_url('purchase/addrow'); ?>">
-                            <i class="fa fa-plus-circle" style="color:green"></i>
-                            <a href="">
-                                <i class="fa fa-minus-circle" style="color:red"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="text" id="jobdesc" name="jobdesc" value=""></td>
-                    <td><input type="text" id="volume" name="volume" value=""></td>
-                    <td><input type="text" id="unit" name="unit" value=""></td>
-                    <td><input type="text" id="price" name="price" value=""></td>
-
-                    <td>
-
-                        <a href="<?php echo base_url('purchase/addrow'); ?>">
-                            <i class="fa fa-plus-circle" style="color:green"></i>
-                            <a href="">
-                                <i class="fa fa-minus-circle" style="color:red"></i>
-
-
-                    </td>
-
-                </tr>
+            <tr>
+               <th>Job Description</th>
+               <th>
+                  Volume
+                  <select id="cost" name="cost">
+                     <option value="IDR" selected="selected">
+                        IDR
+                     </option>
+                     <option value="US">
+                        US
+                     </option>
+                  </select>
+               </th>
+               <th>Unit</th>
+               <th>Price/Unit</th>
+               <th>
+                  Cost In
+                  <select id="cost" name="cost">
+                     <option value="IDR" selected="selected">
+                        IDR
+                     </option>
+                     <option value="US">
+                        US
+                     </option>
+                  </select>
+               </th>
+            </tr>
+         </thead>
+         <tbody id="dinamisRow">
+         <div class="control-group after-add-more">
+            </div>
 
 
         </table>
