@@ -38,7 +38,10 @@ class Purchase extends CI_Controller
         $this->load->view('templates/header',);
         $this->load->view('templates/sidebar');
         $this->load->view('purchase/itembase',$data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer', [
+            'load' => ['addq.js']
+           ]);
+
     }
     public function addrow()
     {
