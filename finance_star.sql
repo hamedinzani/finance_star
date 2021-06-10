@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dumpy
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
