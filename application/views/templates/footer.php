@@ -61,79 +61,16 @@
                 });
             </script>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    var i = 0;
-    $("#dynamic-ar").click(function () {
-        ++i;
-        $("#dynamicAddRemove").append('<tr><td><input type="text" id="jobdesc" name="jobdesc[]" value=""></td><td><input type="text" class="volume'+i+'" name="volume[]" value=""></td><td><select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="unit" name="unit[]"><option value="Hours">Hours</option><option value="Days">Days</option><option value="Months">Months</option><option value="Years">Years</option><option value="Unit">Unit</option></select></td><td><input type="text" class="price'+i+'" name="price[]" value=""></td><td><input type="text" class="cost'+i+'" name="cost[]" value="" readonly></td><td><a href="javascript:void(0)" class="remove-input-field" id="'+i+'"><i class="fa fa-minus-circle" style="color:red"></i></a></td></tr>'
-            );
-        hitung(i);
-    });
-    $(document).on('click', '.remove-input-field', function () {
-        $(this).parents('tr').remove();
-        var row_id = $(this).attr("id");
-        console.log(row_id);
-        delete cost[row_id];
-        tampil();
-    });
-});
-</script>
+            <?php 
+            
+            if(count(@$load ? $load : [] ) > 0) {
+                foreach($load as $file) {
+                    echo "<script src='".base_url('assets/js/'.$file)."'></script>";
+                }
+            }
 
-<script>
-var a = 0;
-var volume = 0;
-    var price = 0;
-    var cost = [];
-$(".volume"+a).change(function(){
-    volume = $(this).val();
-    cost[a] = volume * price;
-    $(".cost"+a).val(cost[a]);
-    tampil();
-  });
-  $(".price"+a).change(function(){
-    price = $(this).val();
-    cost[a] = volume * price;
-    $(".cost"+a).val(cost[a]);
-    tampil();
-  });
-function hitung(i){
-    var volume = 0;
-    var price = 0;
-    $(".volume"+i).change(function(){
-    volume = $(this).val();
-    cost[i] = volume * price;
-    $(".cost"+i).val(cost[i]);
-    tampil();
-  });
-  $(".price"+i).change(function(){
-    price = $(this).val();
-    cost[i] = volume * price;
-    $(".cost"+i).val(cost[i]);
-    tampil();
-  });
+            ?>
 
-}
-function tampil(){
-    $("#total").val(tambah(cost));
-    $("#grand").val(tambah(cost));
-}
-function tambah(input){
-             
-             if (toString.call(input) !== "[object Array]")
-                return false;
-                  
-                        var total =  0;
-                        for(var i=0;i<input.length;i++)
-                          {                  
-                            if(isNaN(input[i])){
-                            continue;
-                             }
-                              total += Number(input[i]);
-                           }
-                         return total;
-                        }
-</script>
 
             </body>
 

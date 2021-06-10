@@ -73,27 +73,8 @@ echo @mdate($format); ?>">
                <th></th>
             </tr>
          </thead>
-         <tbody>
+         <tbody id="dinamisRow">
          <div class="control-group after-add-more">
-                  <tr>
-                     <td><input type="text" id="jobdesc" name="jobdesc[]" value=""></td>
-                     <td><input type="text" class="volume0" name="volume[]" value=""></td>
-                     <td><select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="unit" name="unit[]">
-                                        
-                            <option value="Hours">Hours</option>
-                            <option value="Days">Days</option>
-                            <option value="Months">Months</option>
-                            <option value="Years">Years</option>
-                            <option value="Unit">Unit</option>
-                        
-                                    </select></td>
-                     <td><input type="text" class="price0" name="price[]" value=""></td>
-                     <td><input type="text" class="cost0" name="cost[]" value="" readonly></td>
-                     <td>
-                           <a href="javascript:void(0)" class="add-more" id="dynamic-ar">
-                           <i class="fa fa-plus-circle" style="color:green"></i></a>
-                     </td>
-                  </tr>
             </div>
       </table>
    </div>
@@ -139,3 +120,4 @@ echo @mdate($format); ?>">
 </div>
 </div>
 </form>
+

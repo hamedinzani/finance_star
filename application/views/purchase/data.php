@@ -10,8 +10,7 @@
 
     <!-- Content Row -->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
-        <a href="<?php echo base_url('purchase/print'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i> Print</button></a>
+    <?php echo anchor('purchase/addword', 'New Purchase Order', array('class' => 'btn btn-danger btn-sm')); ?>
     </div>
     <!-- /.container-fluid -->
     <div class="col-lg-12">
