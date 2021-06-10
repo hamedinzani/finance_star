@@ -18,13 +18,16 @@ class Quitation extends CI_Controller
         $this->load->view('quitation/data', $data);
         $this->load->view('templates/footer');
     }
+
     public function add()
     {
         $data['kode_quotation']= $this->m_quotation->CreateCode();
         $this->load->view('templates/header',);
         $this->load->view('templates/sidebar');
         $this->load->view('quitation/add',$data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer', [
+            'load' => ['addq.js']
+           ]);
     }
 
     function add_quitation(){
@@ -80,16 +83,97 @@ class Quitation extends CI_Controller
     public function edit($id)
     {
         $data['quotation'] = $this->m_quotation->edit_data($id,'quotation')->result();
-        $this->load->view('templates/header',);
+        $data['qi'] = $this->m_quotation->ambil_data_q($id)->result();
+        $this->load->view('templates/header', [
+            'load' => ['addq.js']
+           ]);
         $this->load->view('templates/sidebar');
         $this->load->view('quitation/edit', $data);
         $this->load->view('templates/footer');
     }
-    public function addrow()
-    {
-        $this->load->view('templates/header',);
-        $this->load->view('templates/sidebar');
-        $this->load->view('quitation/addrow');
-        $this->load->view('templates/footer');
+
+    function edit_quitation(){
+		$noquitation = $this->input->post('noquitation');
+		$project_name = $this->input->post('pm');
+		$due_date = $this->input->post('dd');
+        $client_name = $this->input->post('cn');
+        $project_start = $this->input->post('ps');
+        $client_email = $this->input->post('ce');
+        $public_notes = $this->input->post('public_notes');
+        $header = $this->input->post('header');
+        $footer = $this->input->post('footer');
+        $total_cost = $this->input->post('total');
+        $grand_total = $this->input->post('grand');
+        $jobdesc = $_POST['jobdesc'];
+        $volume = $_POST['volume'];
+        $unit = $_POST['unit'];
+        $price = $_POST['price'];
+        $cost = $_POST['cost'];
+ 
+		$data = array(
+			'no_Quotation' => $noquitation,
+			'project_Name' => $project_name,
+			'client_Name' => $client_name,
+            'project_Start' => $project_start,
+            'due_date' => $due_date,
+            'client_Email' => $client_email,
+            'public_Notes' => $public_notes,
+            'header' => $header,
+            'footer' => $footer,
+            'total_Cost' => $total_cost,
+            'grand_Total' => $grand_total,
+			);
+            $where = array(
+                'no_Quotation' => $noquitation,
+            );
+        $this->m_quotation->update_data($where,$data,'quotation');
+        $this->m_quotation->hapus_data($where,'quitation_item');
+        if(!empty($jobdesc)){
+            for($a = 0; $a < count($jobdesc); $a++){
+                if(!empty($jobdesc[$a])){
+                    $data = array(
+                        'no_Quotation' => $noquitation,
+                        'job_Desc' => $jobdesc[$a],
+                        'volume' => $volume[$a],
+                        'unit' => $unit[$a],
+                        'price' => $price[$a],
+                        'cost' => $cost[$a],
+                        );
+                    $this->m_quotation->input_data($data,'quitation_item');
+                }
+            }
+        }
+        redirect('quitation/data');
+	}
+
+    function delete($id){
+        // $data = $this->db->get_where('Quotation', ['no_Quotation' => $noquitation])->row_array();
+		// unlink(APPPATH.'../assets/img/'.$data['profile_Photo']);
+        $where = array('no_Quotation' => $id);
+        $this->m_quotation->hapus_data($where,'quitation_item');
+        $this->m_quotation->hapus_data($where,'quotation');
+        redirect('quitation/data');
     }
+
+    function acc($id){
+		$data = array(
+			'is_Acc' => 1,
+			);
+            $where = array(
+                'no_Quotation' => $id,
+            );
+        $this->m_quotation->update_data($where,$data,'quotation');
+        redirect('quitation/data');
+	}
+
+    function unacc($id){
+		$data = array(
+			'is_Acc' => 0,
+			);
+            $where = array(
+                'no_Quotation' => $id,
+            );
+        $this->m_quotation->update_data($where,$data,'quotation');
+        redirect('quitation/data');
+	}
 }

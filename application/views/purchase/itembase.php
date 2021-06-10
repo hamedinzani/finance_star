@@ -1,3 +1,4 @@
+<?php $userdata = $this->session->userdata('user_logged'); ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Purchase Order</a></li>
@@ -8,7 +9,7 @@
     <div class="row ">
         <div class="col">
             <label for="noquitation">No Purchase Order</label>
-            <input type="" class="form-control form-control-user" id="noquitation" name="noquitation" aria-describedby="" placeholder="">
+            <input type="" class="form-control form-control-user" id="noquitation" name="noquitation" aria-describedby="" placeholder="" value="<?= $kode_po ?>" readonly>
         </div>
         <div class="col">
             <label for="ps">Resource Name</label>
@@ -31,7 +32,7 @@
     <div class="row">
         <div class="col">
             <label for="cn">PM Name</label>
-            <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="">
+            <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="" value="<?php echo $userdata->full_Name; ?>">
         </div>
         <div class="col">
             <label for="Pm">Resource Email</label>
@@ -53,7 +54,7 @@
     <div class="row">
         <div class="col">
             <label for="cn">PM Email</label>
-            <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="">
+            <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="" value="<?php echo $userdata->email_Address; ?>">
         </div>
         <div class="col">
             <label for="Pm">Resource Status</label>

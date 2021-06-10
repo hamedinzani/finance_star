@@ -35,11 +35,16 @@
                         <th scope="row"><?php echo $q->no_Quotation; ?></th>
                         <td><?php echo $q->client_Name; ?></td>
                         <td><?php echo $q->project_Name; ?></td>
-                        <td><?php echo $q->cost; ?></td>
+                        <td><?php echo $q->total_Cost; ?></td>
                         <td><?php echo $q->grand_Total; ?></td>
                         <td>
-                            <a href=""><?php echo anchor('quitation/edit', 'Edit', array('class' => 'btn btn-success btn-xs')); ?></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="" class="hapus btn btn-danger btn-xs">Hapus</a>
+                        <a href=""><?php echo anchor('quitation/edit/'.$q->no_Quotation, 'Edit', array('class' => 'btn btn-primary btn-xs')); ?></a>
+                        <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('quitation/delete/'.$q->no_Quotation);?>" class="hapus btn btn-danger btn-xs">Hapus</a>
+                        <?php if($q->is_Acc=="0"){
+                            echo "<a onclick='return confirm('Yakin ingin acc?')' href=".base_url('quitation/acc/'.$q->no_Quotation)." class='hapus btn btn-warning btn-xs'>acc</a>";
+                        } else {
+                            echo "<a onclick='return confirm('Yakin ingin batalkan acc?')' href=".base_url('quitation/unacc/'.$q->no_Quotation)." class='hapus btn btn-success btn-xs'>unacc</a>";
+                        } ?>
 
                         </td>
 
