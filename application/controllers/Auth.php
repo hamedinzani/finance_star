@@ -14,10 +14,11 @@ class Auth extends CI_Controller
     public function index()
     {
         // jika form login disubmit
-        if($this->input->post()){
+        if ($this->input->post()) {
             $this->m_user->doLogin();
-        } else {redirect(site_url('auth/login'));}
-
+        } else {
+            redirect(site_url('auth/login'));
+        }
     }
 
     public function logout()
@@ -26,7 +27,7 @@ class Auth extends CI_Controller
         $this->session->sess_destroy();
         redirect(site_url('auth/login'));
     }
-    
+
     public function login()
     {
         $this->load->view('templates/auth_header.php');

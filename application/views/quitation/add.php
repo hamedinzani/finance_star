@@ -13,7 +13,6 @@
          <label for="dd">Due Date</label>
          <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
          <input type="date"  class="form-control form-control-user" name="dd" value="<?php $this->load->helper('date');
-
 $format = "%Y-%m-%d";
 echo @mdate($format); ?>">
       </div>

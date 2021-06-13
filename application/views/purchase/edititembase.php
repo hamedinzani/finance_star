@@ -39,6 +39,7 @@
             <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="" value="<?= $po->resource_Email?>">
         </div>
         <div class="col">
+
             <label for="dd">Date </label>
             <input type="date"  class="form-control form-control-user" name="tgl" value="<?= $po->date?>">
         </div>
@@ -129,6 +130,12 @@
 
 
             </table>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+            <a href="<?php echo base_url('itembase/save'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+            <a>&emsp;&emsp;</a>
+            <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
         </div>
     </div>
     <div class="col-lg-4">
