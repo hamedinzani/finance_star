@@ -63,10 +63,8 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Detail</h6>
-                            <a class="collapse-item" href="<?php echo base_url('purchase/data'); ?>">Data Word Base</a>
-                            <a class="collapse-item" href="<?php echo base_url('purchase/dataitem'); ?>">Data Item Base</a>
-                            <a class="collapse-item" href="<?php echo base_url('purchase/addword'); ?>">Word Base</a>
-                            <a class="collapse-item" href="<?php echo base_url('purchase/additem'); ?>">Item Base</a>
+                            <a class="collapse-item" href="<?php echo base_url('purchase/data'); ?>">Word Base</a>
+                            <a class="collapse-item" href="<?php echo base_url('purchase/dataitem'); ?>">Item Base</a>
                         </div>
                     </div>
                 </li>

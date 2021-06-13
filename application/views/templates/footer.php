@@ -72,6 +72,17 @@
                 });
             </script>
 
+            <?php 
+            
+            if(count(@$load ? $load : [] ) > 0) {
+                foreach($load as $file) {
+                    echo "<script src='".base_url('assets/js/'.$file)."'></script>";
+                }
+            }
+
+            ?>
+
+
             </body>
 
             </html>
