@@ -54,7 +54,10 @@
                                 <div class="form-group">
                                     <input type="file" class="form-control form-control-user" id="gambar" name="gambar" aria-describedby="" placeholder="">
                                 </div>
-                                <input type="submit" name="submit" class="btn btn-success" value="Simpan"></button>
+                                <br>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                    <a href=""><button type="submit button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i> Save</button></a>
+                                </div>
                                 </form>
 
 
