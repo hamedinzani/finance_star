@@ -12,7 +12,6 @@
         </div>
         <div class="col">
             <label for="dd">Due Date</label>
-            <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
             <input type="date"  class="form-control form-control-user" name="dd" value="<?= $q->due_Date ?>">
         </div>
 
@@ -39,7 +38,6 @@
 <div class="col-lg-12">
     <div>
         <table class="table table-bordered shadow-lg" id="dynamicAddRemove">
-            <!-- <table id=" example" class="display" style="width:100%"> -->
             <thead>
                 <tr>
                     <th>Job Description</th>
@@ -68,25 +66,6 @@
             </thead>
             <tbody id="dinamisRow">
             
-            <!-- <div class="control-group after-add-more">
-                     <td><input type="text" id="jobdesc" name="jobdesc[]" value="" ></td>
-                     <td><input type="text" class="volume volume" name="volume[]" value="" id=""></td>
-                     <td><select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="unit" name="unit[]">
-                                        
-                            <option value="Hours"  >Hours</option>
-                            <option value="Days" >Days</option>
-                            <option value="Months" >Months</option>
-                            <option value="Years" >Years</option>
-                            <option value="Unit" >Unit</option>
-                        
-                                    </select></td>
-                     <td><input type="text" class="price price" name="price[]" value="" id=""></td>
-                     <td><input type="text" class="cost cost" name="cost[]" value="" id=""readonly></td>
-                     <td>
-                           <a href="javascript:void(0)" class="dynamic-ar">
-                           <i class="fa fa-plus-circle" style="color:green"></i></a>
-                     </td>
-                     <td><a href="javascript:void(0)" class="remove-input-field" id=""><i class="fa fa-minus-circle" style="color:red"></i></a></td> -->
                      
                   </tr>
             </div>

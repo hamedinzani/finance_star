@@ -1,25 +1,37 @@
-$(document).ready(function(){
-    tampil_data_barang();   //pemanggilan fungsi tampil barang.
-      
-    //fungsi tampil barang
-    function tampil_data_barang(){
-        $.ajax({
-            type  : 'GET',
-            url   : '<?php echo base_url('+`/quitation/edit`+')?>',
-            async : true,
-            dataType : 'json',
-            success : function(edit){
-                var html = '';
-                var i;
-                for(i=0; i<edit.length; i++){
-                    html += '<tr>'+
-                            '<td><input type="text" id="jobdesc" name="jobdesc[]" value="'+edit[i].job_Desc+'" ></td>'+
-                            '<td><input type="text" class="volume volume'+i+'" name="volume[]" value="'+edit[i].volume+'"></td>'+
-                            '</tr>';
-                }
-                $('#show_data').html(html);
-            }
 
-        });
+ // list all user in datatable
+
+$("#status").on('change', function(el) {
+    var id = "";
+    volume = [];
+price = [];
+cost = [];
+    let ids = $(el.target).val();
+    dinamisRow.html('');
+    if(ids!=''){
+        $.ajax({
+            type: 'ajax',
+            url: `http://localhost/finance/purchase/tampilkanData/`+ids,
+            async: false,
+            dataType: 'json',
+            success: function (data) {
+                try {
+                    id = data[0].project_Name;
+              console.log(id)
+              if(id!=''){
+                $('#pn').val(id);
+              for(i=0; i<data.length; i++){
+                addRow(data[i]);}
+              }
+              
+                 }
+                 catch (err) {
+                    console.log(err);
+                 }
+            
     }
+  
+   });
+    } else {addRow();$('#pn').val("");}
+       
 });

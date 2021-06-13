@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dumpy
+-- phpMyAdmin SQL Dump
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2021 at 02:30 PM
+-- Generation Time: Jun 13, 2021 at 04:49 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -61,6 +61,20 @@ CREATE TABLE `po_item_itembase` (
   `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `po_item_itembase`
+--
+
+INSERT INTO `po_item_itembase` (`id`, `no_Po`, `task`, `qty`, `unit`, `rate`, `amount`) VALUES
+(1, 'ST-PR0002', 'Quaerat ipsum digni', 39, 'Hours', 390, 15210),
+(2, 'ST-PR0002', 'Blanditiis est quas', 345, 'Hours', 403, 139035),
+(3, 'ST-PR0002', 'Aspernatur amet in ', 678, 'Hours', 428, 290184),
+(4, 'ST-PR0002', 'Dignissimos voluptas', 102, 'Hours', 1200, 122400),
+(5, 'ST-PR0003', 'Dignissimos voluptas', 100, 'Hours', 426, 42600),
+(6, 'ST-PR0003', 'Eaque doloribus magn', 500, 'Hours', 276, 138000),
+(7, 'ST-PR0003', 'Aspernatur a qui lab', 30000, 'Hours', 826, 24780000),
+(8, 'ST-PR0003', 'coba 1', 10, 'Hours', 1000, 10000);
+
 -- --------------------------------------------------------
 
 --
@@ -88,7 +102,8 @@ CREATE TABLE `po_item_wordbase` (
 
 CREATE TABLE `purchase_order` (
   `no_Po` varchar(11) NOT NULL,
-  `id_Pm` varchar(7) NOT NULL,
+  `nama_Pm` varchar(7) NOT NULL,
+  `email_pm` varchar(50) NOT NULL,
   `resource_Name` varchar(50) NOT NULL,
   `resource_Email` varchar(30) NOT NULL,
   `resource_Status` enum('project_Manager','top_Management','finance','admin','sales','team','individu') NOT NULL,
@@ -103,6 +118,14 @@ CREATE TABLE `purchase_order` (
   `address_Resource` text NOT NULL,
   `grand_Total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `purchase_order`
+--
+
+INSERT INTO `purchase_order` (`no_Po`, `nama_Pm`, `email_pm`, `resource_Name`, `resource_Email`, `resource_Status`, `mobile_Phone`, `date`, `project_Name`, `id_quotation`, `public_Notes`, `regards`, `footer`, `rate`, `address_Resource`, `grand_Total`) VALUES
+('ST-PR0002', 'ben zos', 'bneks@gmail.com', 'ada', 'dsadsa', '', 'coba project', '2021-06-11', 'Eu duis voluptatibus', 'ST-Q0008', 'adasdasd', 'dasdas', 'sdasd', 0, 'dsdasd', 566829),
+('ST-PR0003', 'ben zos', 'bneks@gmail.com', 'ada', 'dsadsa', 'individu', 'coba project', '2021-06-12', 'Est cum consectetur', 'ST-Q0007', 'asdasd', 'sdas', 'dsdas', 0, 'dasdas', 24970600);
 
 -- --------------------------------------------------------
 
@@ -225,8 +248,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_User`, `user_Name`, `pass_Word`, `full_Name`, `email_Address`, `id_Position`, `id_Status`, `profile_Photo`, `last_Login`, `created_at`, `is_active`) VALUES
 ('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-06-10 09:41:37', '2021-05-19 14:10:03', 0),
-('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 5, 2, 'STR002.jpg', '2021-06-10 10:08:46', '2021-05-19 17:12:39', 0),
-('STR003', 'benben', 'bento', 'ben zoskan', 'bneks@gmail.com', 1, 2, 'STR003.jpg', '2021-06-10 10:22:47', '2021-06-10 09:42:27', 0);
+('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 5, 2, 'STR002.jpg', '2021-06-13 14:48:09', '2021-05-19 17:12:39', 0),
+('STR003', 'benben', 'bento', 'ben zoskan', 'bneks@gmail.com', 1, 2, 'STR003.jpg', '2021-06-12 16:15:15', '2021-06-10 09:42:27', 0);
 
 --
 -- Indexes for dumped tables
@@ -288,7 +311,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `po_item_itembase`
 --
 ALTER TABLE `po_item_itembase`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `po_item_wordbase`

@@ -84,12 +84,12 @@ class Quitation extends CI_Controller
     {
         $data['quotation'] = $this->m_quotation->edit_data($id,'quotation')->result();
         $data['qi'] = $this->m_quotation->ambil_data_q($id)->result();
-        $this->load->view('templates/header', [
-            'load' => ['addq.js']
-           ]);
+        $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('quitation/edit', $data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer', [
+            'load' => ['addq.js']
+           ]);
     }
 
     function edit_quitation(){
@@ -153,6 +153,15 @@ class Quitation extends CI_Controller
         $this->m_quotation->hapus_data($where,'quitation_item');
         $this->m_quotation->hapus_data($where,'quotation');
         redirect('quitation/data');
+    }
+
+    public function print($id)
+    {
+
+
+        $data['qi'] = $this->m_quotation->ambil_data_q($id)->result();
+        $data['quotation'] = $this->m_quotation->getAll($id)->result();
+        $this->load->view('quitation/print', $data);
     }
 
     function acc($id){

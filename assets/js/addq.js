@@ -22,13 +22,13 @@ $(document).on('click',"#dynamic-ar", function(e)
               }
           });
 
-let dinamisRow = $('#dinamisRow')
+dinamisRow = $('#dinamisRow')
 var jum_table = 0;
 var a = 0;
 var volume = [];
 var price = [];
 var cost = [];
-index=0;
+var index=0;
 
 function addRow (jsonData=null) {
   if(jsonData) jsonData = JSON.parse(atob(jsonData));
@@ -56,12 +56,10 @@ let tr = `
 <td><a href="javascript:void(0)" class="remove-input-field" id="${index}"><i class="fa fa-minus-circle" style="color:red"></i></a></td>
 </tr>
 `
-
-jum_table++;
-
 dinamisRow.append(tr)
 hitung(index)
 index++;
+jum_table++;
 }
 
 

@@ -113,10 +113,12 @@ echo @mdate($format); ?>">
          </div>
       </div>
    </div>
-   <div class="container justify-content-center">
-      <input type="submit" class="btn btn-success btn-lg" value="Save"></input>
-      <button type="button" class="btn btn-danger btn-lg">Send Email</button>
-   </div>
+   <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+               <a href=""><button type="submit button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+               <a>&emsp;&emsp;</a>
+               <a href=""><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
+            </div>
 </div>
 </div>
 </form>
