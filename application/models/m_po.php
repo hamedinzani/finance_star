@@ -2,23 +2,30 @@
 
 class M_po extends CI_Model{
 
-	function tampil_data_q(){
+	function tampil_data_po_item(){
         $this->db->select('*');
-        $this->db->from('quotation q'); 
-        $this->db->join('quitation_item qi', 'qi.no_Quotation=q.no_Quotation', 'left');
+        $this->db->from('purchase_order po'); 
+        $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
+        $this->db->group_by('po.no_Po');
+		return $query = $this->db->get();
+	}
+
+    function ambil_data_q($where1, $where2){
+		$this->db->select('*');
+        $this->db->from('quitation_item qi'); 
+        $this->db->join('quotation q', 'qi.no_Quotation=q.no_Quotation', 'left');
+        $this->db->where('q.is_Acc', $where1);
+        $this->db->where('q.is_Q', $where2);
         $this->db->group_by('q.no_Quotation');
 		return $query = $this->db->get();
 	}
 
-    function ambil_data_q($where){
-		$this->db->select('*');
-        $this->db->from('quitation_item qi'); 
-        $this->db->join('quotation q', 'qi.no_Quotation=q.no_Quotation', 'left');
-        $this->db->where('q.no_Quotation', $where);
+    function ambil_data_po_item($where){
+        $this->db->select('*');
+        $this->db->from('purchase_order po'); 
+        $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
+        $this->db->where('po.no_Po', $where);
 		return $query = $this->db->get();
-	}
-    function ambil_data_position(){
-		return $query = $this->db->get('position_item');
 	}
 
     public function CreateCode(){
@@ -46,12 +53,15 @@ class M_po extends CI_Model{
     function input_data($data,$table){
 		$this->db->insert($table,$data);
 	}
+    function ambil_data_position(){
+		return $query = $this->db->get('position_item');
+	}
     function edit_data($where,$table){		
 		$this->db->select('*');
-        $this->db->from('quotation q'); 
-        $this->db->join('quitation_item qi', 'qi.no_Quotation=q.no_Quotation', 'left');
-        $this->db->where('q.no_Quotation', $where);
-        $this->db->group_by('q.no_Quotation');
+        $this->db->from('purchase_order po'); 
+        $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
+        $this->db->where('po.no_Po', $where);
+        $this->db->group_by('po.no_Po');
 		return $query = $this->db->get();
 	}
     function update_data($where,$data,$table){

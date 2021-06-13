@@ -27,8 +27,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php 
+		foreach($po as $po){ 
+		?>
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row"><?php echo $po->no_PO; ?></th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
@@ -38,84 +41,7 @@
                             <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/edit'); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/edit'); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/edit'); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/edit'); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/edit'); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/edit'); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/edit'); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
-
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

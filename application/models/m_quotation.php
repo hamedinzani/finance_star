@@ -5,8 +5,6 @@ class M_quotation extends CI_Model{
 	function tampil_data_q(){
         $this->db->select('*');
         $this->db->from('quotation q'); 
-        $this->db->join('quitation_item qi', 'qi.no_Quotation=q.no_Quotation', 'left');
-        $this->db->group_by('q.no_Quotation');
 		return $query = $this->db->get();
 	}
 
@@ -45,6 +43,16 @@ class M_quotation extends CI_Model{
     function input_data($data,$table){
 		$this->db->insert($table,$data);
 	}
+
+    function getAll($where)
+    {
+        $this->db->select('*');
+        $this->db->from('quotation q');
+        $this->db->where('q.no_Quotation', $where);
+        $this->db->group_by('q.no_Quotation');
+        return $this->db->get();
+    }
+
     function edit_data($where,$table){		
 		$this->db->select('*');
         $this->db->from('quotation q'); 
