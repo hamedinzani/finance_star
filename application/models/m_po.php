@@ -3,14 +3,7 @@
 class M_po extends CI_Model
 {
 
-	function tampil_data_po_item($where){
-        $this->db->select('*');
-        $this->db->from('purchase_order po');
-        $this->db->join('po_item_wordbase i', 'po.no_Po=i.no_po', 'left');
-        $this->db->group_by('po.no_Po');
-        return $query = $this->db->get();
-    }
-    function tampil_data_po_item()
+    function tampil_data_po_item($where)
     {
         $this->db->select('*');
         $this->db->from('purchase_order po');
