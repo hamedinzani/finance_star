@@ -22,6 +22,7 @@
             <label for="dd">Project Name</label>
             <!-- <input type="" class="form-control form-control-user" id="dd" name="dd" aria-describedby="" placeholder=""> -->
             <input name="tanggal" id="tanggal" class="form-control form-control-user datepicker" id="dd" name="dd" aria-describedby="" placeholder="" type="text">
+            <input class="form-control form-control-user" id="tipe" name="tipe" aria-describedby="" placeholder="" type="hidden" value="word">
         </div>
 
     </div>
@@ -48,11 +49,12 @@
         </div>
         <div class="col">
             <label for="dd">Type PO</label>
-            <input type="text" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="" list="typepo">
-            <datalist id="typepo">
-                <option value="Boston">
-                <option value="Cambridge">
-            </datalist>
+            <select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="tipe_Po" name="tipe_Po">
+            <option value="">-</option>
+                                        <?php foreach ($q as $q) : ?>
+                                            <option value="<?php echo $q->no_Quotation; ?>"> <?php echo $q->no_Quotation; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
 
         </div>
 
@@ -75,11 +77,12 @@
         </div>
         <div class="col">
             <label for="dd">No. Quitation</label>
-            <input type="text" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="" list="no">
-            <datalist id="no">
-                <option value="Boston">
-                <option value="Cambridge">
-            </datalist>
+            <select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="status" name="status">
+            <option value="">-</option>
+                                        <?php foreach ($q as $q) : ?>
+                                            <option value="<?php echo $q->no_Quotation; ?>"> <?php echo $q->no_Quotation; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
         </div>
 
     </div>

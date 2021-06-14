@@ -43,10 +43,10 @@
                                 <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('quitation/delete/' . $q->no_Quotation); ?>"><button type="button" class="btn" style="color:red"><i class="fas fa-trash" aria-hidden="true"></i></button></a>
                                 <!-- <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('quitation/delete/' . $q->no_Quotation); ?>" class="hapus btn btn-danger btn-xs">Hapus</a> -->
                                 <?php if ($q->is_Acc == "0") {
-                                    echo "<a onclick='return confirm('Yakin ingin acc?')' href=" . base_url('quitation/acc/' . $q->no_Quotation) . "><button type='button' class='btn' style='color:green'><i class='far fa-check-circle'></i></button></a>";
+                                    echo "<a onclick='return confirm('Yakin ingin acc?')' href=" . base_url('quitation/acc/' . $q->no_Quotation) . "><button type='button' class='btn' style='color:orange'><i class='fa fa-times-circle'></i></button></a>";
                                     // echo "<a onclick='return confirm('Yakin ingin acc?')' href=" . base_url('quitation/acc/' . $q->no_Quotation) . " class='hapus btn btn-warning btn-xs'>acc</a>";
                                 } else {
-                                    echo "<a onclick='return confirm('Yakin ingin batalkan acc?')' href=" . base_url('quitation/unacc/' . $q->no_Quotation) . " ><button type='button' class='btn' style='color:orange'><i class='fa fa-times-circle'></i></button></a>";
+                                    echo "<a onclick='return confirm('Yakin ingin batalkan acc?')' href=" . base_url('quitation/unacc/' . $q->no_Quotation) . " ><button type='button' class='btn' style='color:green'><i class='far fa-check-circle'></i></button></a>";
                                     // echo "<a onclick='return confirm('Yakin ingin batalkan acc?')' href=" . base_url('quitation/unacc/' . $q->no_Quotation) . " class='hapus btn btn-success btn-xs'>unacc</a>";
                                 } ?>
 

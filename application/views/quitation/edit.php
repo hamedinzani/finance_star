@@ -120,8 +120,11 @@
     </form>
 <?php } ?>
 <script>
-    dinamisRow = $('#dinamisRow')
-    <?php foreach ($qi as $qi) {
-        echo "addRow('" . base64_encode(json_encode($qi)) . "');" . PHP_EOL;
-    } ?>
+  var item_list = [];
+
+  <?php
+    foreach($qi as $q) {
+      echo "item_list.push('".base64_encode(json_encode($q))."');".PHP_EOL;
+    }
+  ?>
 </script>

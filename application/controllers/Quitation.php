@@ -22,7 +22,7 @@ class Quitation extends CI_Controller
     public function add()
     {
         $data['kode_quotation']= $this->m_quotation->CreateCode();
-        $this->load->view('templates/header',);
+        $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('quitation/add',$data);
         $this->load->view('templates/footer', [

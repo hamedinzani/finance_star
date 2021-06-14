@@ -3,8 +3,7 @@
 class M_po extends CI_Model
 {
 
-    function tampil_data_po_word()
-    {
+	function tampil_data_po_item($where){
         $this->db->select('*');
         $this->db->from('purchase_order po');
         $this->db->join('po_item_wordbase i', 'po.no_Po=i.no_po', 'left');
@@ -16,6 +15,7 @@ class M_po extends CI_Model
         $this->db->select('*');
         $this->db->from('purchase_order po');
         $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
+        $this->db->where('po.tipe', $where);
         $this->db->group_by('po.no_Po');
         return $query = $this->db->get();
     }
@@ -40,8 +40,15 @@ class M_po extends CI_Model
         return $query = $this->db->get();
     }
 
-    public function CreateCode()
-    {
+    function ambil_data_qi($where){
+		$this->db->select('*');
+        $this->db->from('quitation_item qi'); 
+        $this->db->join('quotation q', 'qi.no_Quotation=q.no_Quotation', 'left');
+        $this->db->where('q.no_Quotation', $where);
+		return $query = $this->db->get();
+	}
+
+    public function CreateCode(){
         $userdata = $this->session->userdata('user_logged');
         $level = $userdata->id_Status;
         $this->db->select('RIGHT(purchase_order.no_Po,4) as no_Po', FALSE);
