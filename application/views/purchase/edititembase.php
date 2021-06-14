@@ -5,25 +5,26 @@
     </ol>
 </nav>
 <?php foreach ($po as $po) { ?>
-    <form method="POST" action="<?php echo base_url('purchase/edit_po_item'); ?>">
-        <div class="container justify-content-start">
-            <div class="row ">
-                <div class="col">
-                    <label for="noquitation">No Purchase Order</label>
-                    <input type="" class="form-control form-control-user" id="noquitation" name="noquitation" aria-describedby="" placeholder="" value="<?= $po->no_Po ?>" readonly>
-                </div>
-                <div class="col">
-                    <label for="ps">Resource Name</label>
-                    <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="" value="<?= $po->resource_Name ?>">
-                </div>
-                <div class="col">
-                    <label for="ps">Mobile Phone</label>
-                    <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="" value="<?= $po->mobile_Phone ?>">
-                </div>
-                <div class="col">
-                    <label for="dd">Project Name</label>
-                    <input name="tanggal" id="tanggal" class="form-control form-control-user datepicker" id="dd" name="dd" aria-describedby="" placeholder="" type="text" value="<?= $po->project_Name ?>">
-                </div>
+<form method="POST" action="<?php echo base_url('purchase/edit_po_item');?>">
+<div class="container justify-content-start">
+    <div class="row ">
+        <div class="col">
+            <label for="noquitation">No Purchase Order</label>
+            <input type="" class="form-control form-control-user" id="nopo" name="nopo" aria-describedby="" placeholder="" value="<?= $po->no_Po?>" readonly>
+        </div>
+        <div class="col">
+            <label for="ps">Resource Name</label>
+            <input type="" class="form-control form-control-user" id="rn" name="rn" aria-describedby="" placeholder="" value="<?= $po->resource_Name?>">
+        </div>
+        <div class="col">
+            <label for="ps">Mobile Phone</label>
+            <input type="" class="form-control form-control-user" id="pm" name="pm" aria-describedby="" placeholder="" value="<?= $po->mobile_Phone?>">
+        </div>
+        <div class="col">
+            <label for="dd">Project Name</label>
+            <input class="form-control form-control-user" id="pn" name="pn" aria-describedby="" placeholder="" type="text" value="<?= $po->project_Name?>">
+            <input class="form-control form-control-user" id="tipe" name="tipe" aria-describedby="" placeholder="" type="hidden" value="item">
+        </div>
 
             </div>
         </div>
@@ -39,36 +40,37 @@
                     <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="" value="<?= $po->resource_Email ?>">
                 </div>
                 <div class="col">
+            <label for="dd">Date </label>
+            <input type="date"  class="form-control form-control-user" name="tgl" value="<?= $po->date?>">
+        </div>
+        <div class="col">
+            <label for="dd">No. Quitation</label>
+            <input type="" class="form-control form-control-user" id="ce" name="status" aria-describedby="" placeholder="" value="<?= $po->id_quotation?>">
+        </div>
 
-                    <label for="dd">Date </label>
-                    <input type="date" class="form-control form-control-user" name="tgl" value="<?= $po->date ?>">
-                </div>
-                <div class="col">
-                    <label for="dd">No. Quitation</label>
-                    <input type="" class="form-control form-control-user" id="ce" name="ce" aria-describedby="" placeholder="" value="<?= $po->resource_Email ?>">
-                </div>
-
-            </div>
+    </div>
+</div>
+<br>
+<div class="container justify-content-start">
+    <div class="row">
+        <div class="col">
+            <label for="cn">PM Email</label>
+            <input type="" class="form-control form-control-user" id="pme" name="pme" aria-describedby="" placeholder="" value="<?= $po->email_pm?>">
+        </div>
+        <div class="col">
+            <label for="Pm">Resource Status</label>
+            <select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="rs" name="rs">
+            <?php foreach ($position as $p) {
+                                                $selected = ($p->status_Name == $po->resource_Status) ? "selected" : "";
+                                                echo '<option ' . $selected . ' value="' . $p->id . '">' . $p->status_Name . '</option>';
+                                            } ?>
+                                    </select>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
         </div>
         <br>
-        <div class="container justify-content-start">
-            <div class="row">
-                <div class="col">
-                    <label for="cn">PM Email</label>
-                    <input type="" class="form-control form-control-user" id="cn" name="cn" aria-describedby="" placeholder="" value="<?= $po->email_pm ?>">
-                </div>
-                <div class="col">
-                    <label for="Pm">Resource Status</label>
-                    <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="" value="<?= $po->resource_Status ?>">
-                </div>
-                <div class="col">
-                </div>
-                <div class="col">
-                </div>
-
-
-            </div>
-        </div>
         <hr>
         <div class="col-lg-12" style="margin-left:auto;margin-right:auto">
             <div>
@@ -130,8 +132,7 @@
                         </table>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-
-                        <a href="<?php echo base_url('itembase/save'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+                    <a href="<?php echo base_url('itembase/save'); ?>"><button type="submit button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
                         <a>&emsp;&emsp;</a>
                         <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
                     </div>
@@ -144,13 +145,16 @@
                     </div>
                 </div>
             </div>
-        </div>
+</div>
+</div>
+</div>
+<?php } ?>
+<script>
+  var item_list = [];
 
-        </div>
-    <?php } ?>
-    <script>
-        dinamisRow = $('#dinamisRow')
-        <?php foreach ($pi as $pi) {
-            echo "addRow('" . base64_encode(json_encode($pi)) . "');" . PHP_EOL;
-        } ?>
-    </script>
+  <?php
+    foreach($pi as $q) {
+      echo "item_list.push('".base64_encode(json_encode($q))."');".PHP_EOL;
+    }
+  ?>
+</script>

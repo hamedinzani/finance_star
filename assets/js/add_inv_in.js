@@ -1,17 +1,15 @@
-
- // list all user in datatable
-
 $("#status").on('change', function(el) {
     var id = "";
     volume = [];
 price = [];
 cost = [];
+jum_table=0;
     let ids = $(el.target).val();
     dinamisRow.html('');
     if(ids!=''){
         $.ajax({
             type: 'ajax',
-            url: `http://localhost/finance/purchase/tampilkanData/`+ids,
+            url: `http://localhost/finance/freelance/tampilkanData/`+ids,
             async: false,
             dataType: 'json',
             success: function (data) {
@@ -32,7 +30,6 @@ cost = [];
     }
   
    });
-    } else {addRow();$('#pn').val("");}
+    } else {jum_table=0;addRow();$('#pn').val("");}
        
 });
-

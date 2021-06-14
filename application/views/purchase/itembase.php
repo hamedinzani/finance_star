@@ -23,6 +23,7 @@
             <div class="col">
                 <label for="pn">Project Name</label>
                 <input class="form-control form-control-user" id="pn" name="pn" aria-describedby="" placeholder="" type="text">
+                <input class="form-control form-control-user" id="tipe" name="tipe" aria-describedby="" placeholder="" type="hidden" value="item">
             </div>
 
         </div>
@@ -68,7 +69,7 @@
                 <label for="Pm">Resource Status</label>
                 <select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="rs" name="rs">
                     <?php foreach ($position as $p) : ?>
-                        <option value="<?php echo $p->id; ?>"> <?php echo $p->position_Name; ?></option>
+                        <option value="<?php echo $p->status_Name; ?>"> <?php echo $p->status_Name; ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -88,25 +89,26 @@
                     <tr>
                         <th>Job Description</th>
                         <th>
-                            <select id="cost" name="cost" class="form-control font-weight-bold">
+                            Volume
+                            <select id="cost" name="cost">
                                 <option value="IDR" selected="selected">
-                                    Volume IDR
+                                    IDR
                                 </option>
                                 <option value="US">
-                                    Volume US
+                                    US
                                 </option>
                             </select>
                         </th>
                         <th>Unit</th>
                         <th>Price/Unit</th>
                         <th>
-
-                            <select id="cost" name="cost" class="form-control font-weight-bold">
+                            Cost In
+                            <select id="cost" name="cost">
                                 <option value="IDR" selected="selected">
-                                    Cost In IDR
+                                    IDR
                                 </option>
                                 <option value="US">
-                                    Cost In US
+                                    US
                                 </option>
                             </select>
                         </th>
@@ -114,9 +116,8 @@
                 </thead>
                 <tbody id="dinamisRow">
                     <div class="control-group after-add-more">
+
                     </div>
-
-
             </table>
         </div>
 
@@ -126,7 +127,7 @@
         <div class="row">
             <div class="col-lg-8" style="margin-left:auto;margin-right:auto">
                 <div>
-                    <table class="table table-bordered shadow">
+                    <table class="table table-bordered shadow" style="">
                         <thead>
                             <tr>
                                 <th>Public Notes</th>
@@ -136,10 +137,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><textarea name="public_notes" class="form-control"></textarea></td>
-                                <td><textarea name="regards" class="form-control"></textarea></td>
-                                <td><textarea name="footer" class="form-control"></textarea></td>
-                                <td><textarea name="address_resource" class="form-control"></textarea></td>
+                                <td><textarea name="public_notes"></textarea></td>
+                                <td><textarea name="regards"></textarea></td>
+                                <td><textarea name="footer"></textarea></td>
+                                <td><textarea name="address_resource"></textarea></td>
                             </tr>
 
 
@@ -147,21 +148,16 @@
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
 
-                    <a href="<?php echo base_url('itembase/save'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
-                    <a>&emsp;&emsp;</a>
-                    <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
                 </div>
             </div>
             <div class="col-lg-4">
                 <hr>
                 <div class="text-left font-weight-bold">
-                    Grand Total <input type="text" id="grand" name="grand" value="" readonly class="form-control">
+                    Grand Total <input type="text" id="grand" name="grand" value="" readonly>
                     <hr>
                 </div>
             </div>
         </div>
     </div>
-
-
     </div>
 </form>
