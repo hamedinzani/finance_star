@@ -99,7 +99,7 @@
                     <th>Weight</th>
                     <th>
                         <data-title="wwc">
-                            <select name="statusSelect" id="statusSelect" class="form-control">
+                            <select name="statusSelect" id="statusSelect" class="form-control font-weight-bold">
                                 <option selected="selected">Weight Word Count IDR</option>
                                 <option>Weight Word Count US</option>
 

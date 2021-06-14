@@ -9,9 +9,15 @@
 
 
         <!-- Content Row -->
+        <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            <?php echo anchor('purchase/additem', 'New Purchase Order', array('class' => 'btn btn-danger btn-sm')); ?>
+        </div> -->
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
-        <?php echo anchor('purchase/additem', 'New Purchase Order', array('class' => 'btn btn-danger btn-sm')); ?>
+            <a href="<?php echo base_url('purchase/additem'); ?>"><button type="submit button" class="btn btn-success"><i class="fas fa-plus-square" aria-hidden="true"></i>&ensp;New PO</button></a>
+            <a>&emsp;&emsp;</a>
+            <a href=""><button type="button" class="btn btn-danger"><i class="fas fa-print" aria-hidden="true"></i>&ensp;&ensp;Print&ensp;&ensp;</button></a>
         </div>
         <!-- /.container-fluid -->
         <div class="col-lg-12">
