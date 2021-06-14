@@ -7,7 +7,6 @@ class M_po extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('purchase_order po');
-        $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
         $this->db->where('po.tipe', $where);
         $this->db->group_by('po.no_Po');
         return $query = $this->db->get();
@@ -29,6 +28,15 @@ class M_po extends CI_Model
         $this->db->select('*');
         $this->db->from('purchase_order po');
         $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
+        $this->db->where('po.no_Po', $where);
+        return $query = $this->db->get();
+    }
+
+    function ambil_data_po_word($where)
+    {
+        $this->db->select('*');
+        $this->db->from('purchase_order po');
+        $this->db->join('po_item_wordbase i', 'po.no_Po=i.no_Po');
         $this->db->where('po.no_Po', $where);
         return $query = $this->db->get();
     }

@@ -69,7 +69,7 @@ echo @mdate($format); ?>">
             <label for="Pm">Resource Status</label>
             <select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="rs" name="rs">
                                         <?php foreach ($position as $p) : ?>
-                                            <option value="<?php echo $p->id; ?>"> <?php echo $p->status_Name; ?></option>
+                                            <option value="<?php echo $p->status_Name; ?>"> <?php echo $p->status_Name; ?></option>
                                         <?php endforeach; ?>
                                     </select>
         </div>

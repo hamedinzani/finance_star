@@ -35,3 +35,4 @@ cost = [];
     } else {addRow();$('#pn').val("");}
        
 });
+
