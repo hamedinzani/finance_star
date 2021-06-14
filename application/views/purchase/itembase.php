@@ -137,17 +137,16 @@ echo @mdate($format); ?>">
                 </thead>
                 <tbody>
                     <tr>
-                    <td><textarea name="public_notes"></textarea></td>
-                     <td><textarea name="regards"></textarea></td>
-                     <td><textarea name="footer"></textarea></td>
-                     <td><textarea name="address_resource"></textarea></td>
-                    </tr>
+                                <td><textarea name="public_notes" class="form-control"></textarea></td>
+                                <td><textarea name="regards" class="form-control"></textarea></td>
+                                <td><textarea name="footer" class="form-control"></textarea></td>
+                                <td><textarea name="address_resource" class="form-control"></textarea></td>
+                            </tr>
 
 
             </table>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-
             <a href="<?php echo base_url('purchase/add_po_item'); ?>"><button type="submit button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
             <a>&emsp;&emsp;</a>
             <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>

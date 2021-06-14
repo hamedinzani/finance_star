@@ -47,4 +47,12 @@ class Finance extends CI_Controller
         $this->load->view('finance/invoiceout');
         $this->load->view('templates/footer');
     }
+    public function print()
+    {
+
+
+        // $data['qi'] = $this->m_quotation->ambil_data_q($id)->result();
+        // $data['quotation'] = $this->m_quotation->getAll($id)->result();
+        $this->load->view('finance/print/invstar');
+    }
 }

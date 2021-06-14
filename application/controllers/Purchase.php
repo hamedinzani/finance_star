@@ -411,4 +411,12 @@ class Purchase extends CI_Controller
         $this->m_po->hapus_data($where,'purchase_order');
         redirect('purchase/data');
     }
+    public function print()
+    {
+
+
+        // $data['qi'] = $this->m_quotation->ambil_data_q($id)->result();
+        // $data['quotation'] = $this->m_quotation->getAll($id)->result();
+        $this->load->view('purchase/print/poibm');
+    }
 }
