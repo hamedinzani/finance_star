@@ -80,6 +80,8 @@
                 }
             }
 
+            echo @$script_last_template;
+
             ?>
 
 
