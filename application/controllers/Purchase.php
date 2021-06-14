@@ -143,4 +143,12 @@ class Purchase extends CI_Controller
             'load' => ['addq.js']
         ]);
     }
+    public function print()
+    {
+
+
+        // $data['qi'] = $this->m_quotation->ambil_data_q($id)->result();
+        // $data['quotation'] = $this->m_quotation->getAll($id)->result();
+        $this->load->view('purchase/print/poibm');
+    }
 }

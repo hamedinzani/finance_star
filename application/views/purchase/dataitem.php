@@ -17,7 +17,7 @@
 
             <a href="<?php echo base_url('purchase/additem'); ?>"><button type="submit button" class="btn btn-success"><i class="fas fa-plus-square" aria-hidden="true"></i>&ensp;New PO</button></a>
             <a>&emsp;&emsp;</a>
-            <a href=""><button type="button" class="btn btn-danger"><i class="fas fa-print" aria-hidden="true"></i>&ensp;&ensp;Print&ensp;&ensp;</button></a>
+            <a href="<?php echo base_url('purchase/print'); ?>"><button type="button" class="btn btn-danger"><i class="fas fa-print" aria-hidden="true"></i>&ensp;&ensp;Print&ensp;&ensp;</button></a>
         </div>
         <!-- /.container-fluid -->
         <div class="col-lg-12">

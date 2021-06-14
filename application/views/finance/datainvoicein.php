@@ -11,7 +11,7 @@
     <!-- Content Row -->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
-        <a href="<?php echo base_url('purchase/print'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp;Print&emsp;&ensp;</button></a>
+        <a href="<?php echo base_url('finance/print'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp;Print&emsp;&ensp;</button></a>
     </div>
     <!-- /.container-fluid -->
     <div class="col-lg-12">

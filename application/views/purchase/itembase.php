@@ -126,7 +126,7 @@
         <div class="row">
             <div class="col-lg-8" style="margin-left:auto;margin-right:auto">
                 <div>
-                    <table class="table table-bordered shadow" style="">
+                    <table class="table table-bordered shadow">
                         <thead>
                             <tr>
                                 <th>Public Notes</th>
