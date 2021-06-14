@@ -121,4 +121,7 @@ echo @mdate($format); ?>">
 </div>
 </div>
 </form>
+<script>
+dinamisRow = $('#dinamisRow')
+            </script>
 

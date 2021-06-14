@@ -1,8 +1,9 @@
-window.onload = function() {
-  if(jum_table<1){
-    addRow();
-  }
-};
+$(document).ready(function(e)
+    {
+      if(jum_table<1){
+addRow();
+      }
+    });
 
 
 $(document).on('click',"#dynamic-ar", function(e)
@@ -31,6 +32,7 @@ var cost = [];
 var index=0;
 
 function addRow (jsonData=null) {
+  console.log(jsonData);
   if(jsonData) jsonData = JSON.parse(atob(jsonData));
   else jsonData = {};
 
@@ -62,25 +64,6 @@ index++;
 jum_table++;
 }
 
-
-//     var i = 0;
-//    $(document).ready(function(){
-//     $(document).on('click', '.dynamic-ar', function () {
-//         ++i;
-//         $("#dynamicAddRemove").append('<tr><td><input type="text" id="jobdesc" name="jobdesc[]" value=""></td><td><input type="text" class="volume'+i+'" name="volume[]" value=""></td><td><select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="unit" name="unit[]"><option value="Hours">Hours</option><option value="Days">Days</option><option value="Months">Months</option><option value="Years">Years</option><option value="Unit">Unit</option></select></td><td><input type="text" class="price'+i+'" name="price[]" value=""></td><td><input type="text" class="cost'+i+'" name="cost[]" value="" readonly></td><td><a href="javascript:void(0)" class="dynamic-ar"><i class="fa fa-plus-circle" style="color:green"></i></a></td><td><a href="javascript:void(0)" class="remove-input-field" id="'+i+'"><i class="fa fa-minus-circle" style="color:red"></i></a></td></tr>'
-//             );
-//         hitung(i);
-//     });
-//     $(document).on('click', '.remove-input-field', function () {
-//         if(jum_table>1){
-//         $(this).parents('tr').remove();
-//         var row_id = $(this).attr("id");
-//         console.log(row_id);
-//         delete cost[row_id];
-//         tampil();}
-//     });
-//    });
-
 function hitung(a){
   console.log(a);
   volume[a] = $(".volume"+a).val();
@@ -89,23 +72,7 @@ function hitung(a){
   tampil()
   $(".cost"+a).val(cost[a]);
 }
-// function hitung(i){
-//     var volume = 0;
-//     var price = 0;
-//     $(".volume"+i).change(function(){
-//     volume = $(this).val();
-//     cost[i] = volume * price;
-//     $(".cost"+i).val(cost[i]);
-//     tampil();
-//   });
-//   $(".price"+i).change(function(){
-//     price = $(this).val();
-//     cost[i] = volume * price;
-//     $(".cost"+i).val(cost[i]);
-//     tampil();
-//   });
 
-// }
 function tampil(){
     $("#total").val(tambah(cost));
     $("#grand").val(tambah(cost));
@@ -125,3 +92,12 @@ function tambah(input){
                            }
                          return total;
                         }
+
+function append_item() {
+  if(typeof item_list === 'undefined' || item_list?.length <= 0) return;
+
+  for(let i=0; i < item_list.length; i++){
+    addRow(item_list[i]);
+  }
+}
+append_item();

@@ -2,10 +2,11 @@
 
 class M_po extends CI_Model{
 
-	function tampil_data_po_item(){
+	function tampil_data_po_item($where){
         $this->db->select('*');
         $this->db->from('purchase_order po'); 
         $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
+        $this->db->where('po.tipe', $where);
         $this->db->group_by('po.no_Po');
 		return $query = $this->db->get();
 	}
@@ -25,6 +26,14 @@ class M_po extends CI_Model{
         $this->db->from('purchase_order po'); 
         $this->db->join('po_item_itembase i', 'po.no_Po=i.no_po', 'left');
         $this->db->where('po.no_Po', $where);
+		return $query = $this->db->get();
+	}
+
+    function ambil_data_qi($where){
+		$this->db->select('*');
+        $this->db->from('quitation_item qi'); 
+        $this->db->join('quotation q', 'qi.no_Quotation=q.no_Quotation', 'left');
+        $this->db->where('q.no_Quotation', $where);
 		return $query = $this->db->get();
 	}
 

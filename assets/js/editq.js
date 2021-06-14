@@ -21,7 +21,7 @@ cost = [];
               if(id!=''){
                 $('#pn').val(id);
               for(i=0; i<data.length; i++){
-                addRow(data[i]);}
+                addRow(btoa(JSON.stringify(data[i])));}
               }
               
                  }

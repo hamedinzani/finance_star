@@ -23,6 +23,7 @@
         <div class="col">
             <label for="pn">Project Name</label>
             <input class="form-control form-control-user" id="pn" name="pn" aria-describedby="" placeholder="" type="text">
+            <input class="form-control form-control-user" id="tipe" name="tipe" aria-describedby="" placeholder="" type="hidden" value="item">
         </div>
 
     </div>
@@ -115,9 +116,8 @@ echo @mdate($format); ?>">
          </thead>
          <tbody id="dinamisRow">
          <div class="control-group after-add-more">
-            </div>
-
-
+            
+        </div>
         </table>
     </div>
 
@@ -148,7 +148,7 @@ echo @mdate($format); ?>">
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
 
-            <a href="<?php echo base_url('itembase/save'); ?>"><button type="button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+            <a href="<?php echo base_url('purchase/add_po_item'); ?>"><button type="submit button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
             <a>&emsp;&emsp;</a>
             <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
         </div>
@@ -161,11 +161,6 @@ echo @mdate($format); ?>">
         </div>
     </div>
 </div>
-</div>
-
-<div class="container justify-content-center">
-<input type="submit" class="btn btn-success btn-lg" value="Save"></input>
-    <button type="button" class="btn btn-danger btn-lg">Send Email</button>
 </div>
 </div>
 </form>

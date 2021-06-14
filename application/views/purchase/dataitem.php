@@ -39,7 +39,7 @@
                         <td><?php echo $po->grand_Total; ?></td>
                         <td>
                             <a href="<?php echo base_url('purchase/edititembase/'.$po->no_Po); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete'); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
+                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete_pi/'.$po->no_Po); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
                         </td>
                     </tr>
                     <?php } ?>
