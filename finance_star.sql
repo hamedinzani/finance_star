@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 07:30 PM
+-- Generation Time: Jun 14, 2021 at 09:53 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -44,7 +44,8 @@ CREATE TABLE `invoice_in` (
   `signature` text NOT NULL,
   `footer` text NOT NULL,
   `total_cost` int(11) NOT NULL,
-  `grand_total` int(11) NOT NULL
+  `grand_total` int(11) NOT NULL,
+  `tipe` enum('word','item','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -412,9 +413,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_User`, `user_Name`, `pass_Word`, `full_Name`, `email_Address`, `id_Position`, `id_Status`, `profile_Photo`, `last_Login`, `created_at`, `is_active`) VALUES
-('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-06-10 09:41:37', '2021-05-19 14:10:03', 0),
-('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 5, 2, 'STR002.jpg', '2021-06-14 13:15:49', '2021-05-19 17:12:39', 0),
-('STR003', 'benben', 'bento', 'ben zoskan', 'bneks@gmail.com', 1, 2, 'STR003.jpg', '2021-06-14 13:16:04', '2021-06-10 09:42:27', 0);
+('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-06-14 17:33:44', '2021-05-19 14:10:03', 0),
+('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 5, 2, 'STR002.jpg', '2021-06-14 17:33:07', '2021-05-19 17:12:39', 0),
+('STR003', 'benben', 'bento', 'ben zoskan', 'bneks@gmail.com', 1, 2, 'STR003.jpg', '2021-06-14 18:42:35', '2021-06-10 09:42:27', 0),
+('STR004', 'ilham', 'ilham', 'ilham nur inzani', 'ilhamham@gmail.com', 7, 1, 'STR004.jpg', '2021-06-14 18:43:11', '2021-06-14 17:34:53', 0);
 
 --
 -- Indexes for dumped tables
