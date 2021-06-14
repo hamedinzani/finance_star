@@ -61,8 +61,8 @@
             <label for="Pm">Resource Status</label>
             <select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="rs" name="rs">
             <?php foreach ($position as $p) {
-                                                $selected = ($p->position_Name == $po->resource_Status) ? "selected" : "";
-                                                echo '<option ' . $selected . ' value="' . $p->id . '">' . $p->position_Name . '</option>';
+                                                $selected = ($p->status_Name == $po->resource_Status) ? "selected" : "";
+                                                echo '<option ' . $selected . ' value="' . $p->id . '">' . $p->status_Name . '</option>';
                                             } ?>
                                     </select>
         </div>
