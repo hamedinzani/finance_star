@@ -50,10 +50,10 @@
         <div class="col">
             <label for="dd">Type PO</label>
             <select class="custom-select lg mb-3 col-lg" aria-label=".form-select-lg example" id="tipe_Po" name="tipe_Po">
-            <option value="">-</option>
-                                        <?php foreach ($q as $q) : ?>
-                                            <option value="<?php echo $q->no_Quotation; ?>"> <?php echo $q->no_Quotation; ?></option>
-                                        <?php endforeach; ?>
+            <option value="1">Trados</option>
+            <option value="2">Transit, XTM, etc.</option>
+            <option value="3">Patent</option>
+            <option value="4">Google MT</option>
                                     </select>
 
         </div>
