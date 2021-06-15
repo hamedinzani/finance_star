@@ -33,20 +33,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php 
-		foreach($po as $po){ 
-		?>
-                    <tr>
-                        <th scope="row"><?php echo $po->no_Po; ?></th>
-                        <td><?php echo $po->resource_Name; ?></td>
-                        <td><?php echo $po->project_Name; ?></td>
-                        <td><?php echo $po->resource_Status; ?></td>
-                        <td><?php echo $po->grand_Total; ?></td>
-                        <td>
-                            <a href="<?php echo base_url('purchase/editwordbase/'.$po->no_Po); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                            <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete_pw/'.$po->no_Po); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
-                        </td>
-                    </tr>
+                    <?php
+                    foreach ($po as $po) {
+                    ?>
+                        <tr>
+                            <th scope="row"><?php echo $po->no_Po; ?></th>
+                            <td><?php echo $po->resource_Name; ?></td>
+                            <td><?php echo $po->project_Name; ?></td>
+                            <td><?php echo $po->resource_Status; ?></td>
+                            <td><?php echo $po->grand_Total; ?></td>
+                            <td>
+                                <a href="<?php echo base_url('purchase/editwordbase/' . $po->no_Po); ?>"><button type="button" class="btn" style="color:blue"><i class="fa fa-edit" aria-hidden="true"></i></button></a>
+                                <a onclick="return confirm('Yakin ingin hapus?')" href="<?php echo base_url('purchase/delete_pw/' . $po->no_Po); ?>"><button type="button" class="btn" style="color:red"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></a>
+                                <a href="<?php echo base_url('purchase/print/' . $po->no_Po); ?>"><button type="button" class="btn" style="color:black"><i class="fas fa-print" aria-hidden="true"></i></button></a>
+                            </td>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>
