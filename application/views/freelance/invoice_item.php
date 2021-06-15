@@ -5,7 +5,7 @@
     </ol>
 </nav>
 <?php $userdata = $this->session->userdata('user_logged'); ?>
-<form method="POST" action="<?php echo base_url('freelance/add_inv_word');?>">
+<form method="POST" action="<?php echo base_url('freelance/add_inv_item');?>">
 <div class="container justify-content-start">
     <div class="row ">
         <div class="col">
@@ -45,7 +45,7 @@
         <div class="col">
             <label for="Pm">Mitra Name</label>
             <input type="" class="form-control form-control-user" id="ps" name="ps" aria-describedby="" placeholder="" value="<?php echo $userdata->full_Name; ?>">
-            <input class="form-control form-control-user" id="tipe" name="tipe" aria-describedby="" placeholder="" type="hidden" value="word">
+            <input class="form-control form-control-user" id="tipe" name="tipe" aria-describedby="" placeholder="" type="hidden" value="item">
         </div>
         <div class="col">
             <label for="Duedate">Invoice Date </label>
@@ -101,6 +101,7 @@
                 <tr>
                     <th>Job Description</th>
                     <th>Quantity Words</th>
+                    <th>Unit</th>
                     <th>Rate</th>
                     <th>Amount IDR</th>
                 </tr>
@@ -138,7 +139,7 @@
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
 
-            <a href="<?php echo base_url('freelance/add_inv_word'); ?>"><button type="submit button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
+            <a href="<?php echo base_url('freelance/add_inv_item'); ?>"><button type="submit button" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>&emsp;&ensp; Save &emsp;&ensp;</button></a>
             <a>&emsp;&emsp;</a>
             <a href="<?php echo base_url('itembase/sendemail'); ?>"><button type="button" class="btn btn-danger"><i class=" fa fa-paper-plane" aria-hidden="true"></i>&ensp; Send Email </button></a>
         </div>

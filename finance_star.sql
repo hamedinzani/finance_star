@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 09:53 PM
+-- Generation Time: Jun 15, 2021 at 03:15 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -48,6 +48,14 @@ CREATE TABLE `invoice_in` (
   `tipe` enum('word','item','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `invoice_in`
+--
+
+INSERT INTO `invoice_in` (`no_invoice`, `no_Po`, `no_rekening`, `cabang_bank`, `mitra_name`, `address`, `down_payment`, `invoice_date`, `due_date`, `email`, `no_npwp`, `public_notes`, `terms`, `signature`, `footer`, `total_cost`, `grand_total`, `tipe`) VALUES
+('STJAK-0002-2021', 'ST-PR0004', '5435345', 'BCA', 'ilham nur inzani', 'coba address 2', 500, '2021-06-15', '2021-06-19', 'ilhamham@gmail.com', '634345', 'pn', 'rg', 'ar', 'ft', 617130, 617130, 'item'),
+('STJAK-0003-2021', 'ST-PR0007', '5435345', 'coba project', 'ilham nur inzani', 'coba address 2', 500, '2021-06-15', '2021-06-19', 'ilhamham@gmail.com', '634345', 'pn', 'rg', 'ar', 'ft', 92000, 92000, 'word');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +71,18 @@ CREATE TABLE `invoice_in_item` (
   `rate` int(11) NOT NULL,
   `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `invoice_in_item`
+--
+
+INSERT INTO `invoice_in_item` (`id`, `no_invoice`, `jobdesc`, `qty`, `unit`, `rate`, `amount`) VALUES
+(44, 'STJAK-0003-2021', 'Eu duis voluptatibus', 810, '', 100, 81000),
+(45, 'STJAK-0003-2021', 'coba 1', 110, '', 100, 11000),
+(62, 'STJAK-0002-2021', 'Iure dolorem dolores', 400, 'Hours', 819, 327600),
+(63, 'STJAK-0002-2021', 'Aperiam sunt ea quia', 70, 'Hours', 663, 46410),
+(64, 'STJAK-0002-2021', 'Quis sint aliquip si', 6, 'Hours', 520, 3120),
+(65, 'STJAK-0002-2021', 'coba 3', 200, 'Hours', 1200, 240000);
 
 -- --------------------------------------------------------
 
@@ -127,6 +147,14 @@ CREATE TABLE `invoice_item_spq` (
   `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `invoice_item_spq`
+--
+
+INSERT INTO `invoice_item_spq` (`id`, `no_invoice`, `jobdesc`, `qtt_word`, `price`, `amount`) VALUES
+(7, 'STJAK-0004-2021', 'coba project 3', 1000, 200, 200000),
+(8, 'STJAK-0004-2021', 'coba 1', 200, 1000, 200000);
+
 -- --------------------------------------------------------
 
 --
@@ -164,8 +192,16 @@ CREATE TABLE `invoice_out` (
   `signature` text NOT NULL,
   `footer` text NOT NULL,
   `total_cost` int(11) NOT NULL,
-  `grand_total` int(11) NOT NULL
+  `grand_total` int(11) NOT NULL,
+  `tipe` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `invoice_out`
+--
+
+INSERT INTO `invoice_out` (`no_invoice`, `no_Po`, `client_name`, `account`, `swift_code`, `address`, `down_payment`, `invoice_date`, `due_date`, `email`, `no_rek`, `public_notes`, `terms`, `signature`, `footer`, `total_cost`, `grand_total`, `tipe`) VALUES
+('STJAK-0004-2021', 'ST-PR0009', 'Clare Becken', '0902211411', 'BBBAIDJA', 'coba address 1', 500, '2021-06-15', '2021-06-18', 'freelnastar11@gmail.com', '', 'pn', 'rg', 'ar', 'ft', 400000, 400000, 4);
 
 -- --------------------------------------------------------
 
@@ -221,7 +257,9 @@ INSERT INTO `po_item_itembase` (`id`, `no_Po`, `task`, `qty`, `unit`, `rate`, `a
 (51, 'ST-PR0004', 'Iure dolorem dolores', 400, 'Hours', 819, 327600),
 (52, 'ST-PR0004', 'Aperiam sunt ea quia', 70, 'Hours', 663, 46410),
 (53, 'ST-PR0004', 'Quis sint aliquip si', 6, 'Hours', 520, 3120),
-(54, 'ST-PR0004', 'coba 2', 200, 'Hours', 1200, 240000);
+(54, 'ST-PR0004', 'coba 2', 200, 'Hours', 1200, 240000),
+(63, 'ST-PR0008', 'coba 1', 100, 'Hours', 390, 39000),
+(64, 'ST-PR0008', 'coba 3', 820, 'Hours', 426, 349320);
 
 -- --------------------------------------------------------
 
@@ -247,7 +285,8 @@ CREATE TABLE `po_item_wordbase` (
 --
 
 INSERT INTO `po_item_wordbase` (`id`, `no_Po`, `locked`, `repetitions`, `fuzzy100`, `fuzzy95`, `fuzzy85`, `fuzzy75`, `fuzzy50`, `new`) VALUES
-(6, 'ST-PR0007', 100, 100, 100, 100, 100, 100, 100, 110);
+(6, 'ST-PR0007', 100, 100, 100, 100, 100, 100, 100, 110),
+(9, 'ST-PR0009', 200, 200, 200, 200, 200, 200, 200, 200);
 
 -- --------------------------------------------------------
 
@@ -282,10 +321,12 @@ CREATE TABLE `purchase_order` (
 --
 
 INSERT INTO `purchase_order` (`no_Po`, `nama_Pm`, `email_pm`, `resource_Name`, `resource_Email`, `resource_Status`, `mobile_Phone`, `date`, `project_Name`, `id_quotation`, `public_Notes`, `regards`, `footer`, `rate`, `address_Resource`, `grand_Total`, `tipe`, `tipe_Po`, `is_inv`) VALUES
-('ST-PR0004', 'ciwyruq', 'ciwyruqu@mailinator.com', 'Soluta incididunt ve', 'mod@gmail.com', 'Freelance', '0897654678', '2010-11-17', 'Consectetur veniam ', 'ST-Q0009', 'Fugiat commodi Nam ', 'Eligendi aut mollit ', 'Rerum eius velit al', 0, 'Fuga Incididunt dis', 617130, 'item', '', 0),
+('ST-PR0004', 'ciwyruq', 'ciwyruqu@mailinator.com', 'Soluta incididunt ve', 'mod@gmail.com', 'Freelance', '0897654678', '2010-11-17', 'Consectetur veniam ', 'ST-Q0009', 'Fugiat commodi Nam ', 'Eligendi aut mollit ', 'Rerum eius velit al', 0, 'Fuga Incididunt dis', 617130, 'item', '', 1),
 ('ST-PR0005', 'nydyrax', 'kiviw@mailinator.com', 'Provident totam sed', 'Reuben Steele', 'Freelance', 'Eveniet volupta', '1995-10-18', 'Consectetur veniam ', 'ST-Q0009', 'Qui sit cum tempori', 'Et nihil sit sequi d', 'Cupidatat ex nemo of', 0, 'Quia aliquid archite', 377130, 'item', '', 0),
 ('ST-PR0006', 'difomef', 'rore@mailinator.com', 'Distinctio Amet nu', 'Iola Beck', 'Freelance', 'Sequi laborum a', '1996-04-06', 'Eu duis voluptatibus', 'ST-Q0008', 'Pariatur Est qui a', 'Quo magna Nam ut ut ', 'Aut tenetur ipsam au', 0, 'Quo ducimus totam e', 444429, 'item', '', 0),
-('ST-PR0007', 'lodyvap', 'At ea incidunt quid', 'coba edit 1', 'Jaden Andrews', 'In House (Speequel Jakarta)', 'Sapiente expedi', '1920-11-22', 'Eu duis voluptatibus', 'ST-Q0008', 'Perspiciatis conseq', 'Non officia illum o', 'In aute sed obcaecat', 100, 'Minima proident ape', 33800, 'word', '3', 0);
+('ST-PR0007', 'lodyvap', 'At ea incidunt quid', 'coba edit 1', 'Jaden Andrews', 'In House (Speequel Jakarta)', 'Sapiente expedi', '1920-11-22', 'Eu duis voluptatibus', 'ST-Q0008', 'Perspiciatis conseq', 'Non officia illum o', 'In aute sed obcaecat', 100, 'Minima proident ape', 33800, 'word', '3', 1),
+('ST-PR0008', 'xytiref', 'gyhiqe@mailinator.com', 'Eu accusantium dolor', 'Eve Mcclure', 'In House (Star Jakarta)', 'Amet aliqua Et ', '1989-02-07', 'coba project', '', 'Recusandae Consequu', 'Aut rerum cillum vol', 'Est non voluptatem n', 0, 'Et tempor facere eum', 388320, 'item', '', 0),
+('ST-PR0009', 'fiwu@ma', 'Ipsam ipsam dolores ', 'Consequat Nulla eni', 'Patience Cline', 'In House (Speequel Jakarta)', 'Do rem sint et ', '0000-00-00', 'coba project 2', '', 'Nulla quo distinctio', 'Culpa iure neque in', 'Quaerat minus eiusmo', 200, 'Cumque blanditiis vo', 146000, 'word', '2', 1);
 
 -- --------------------------------------------------------
 
@@ -413,10 +454,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_User`, `user_Name`, `pass_Word`, `full_Name`, `email_Address`, `id_Position`, `id_Status`, `profile_Photo`, `last_Login`, `created_at`, `is_active`) VALUES
-('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-06-14 17:33:44', '2021-05-19 14:10:03', 0),
+('STR001', 'admin', 'passadmin', 'admin finance 1', 'Adminfinance123@gmail.com', 4, 0, 'STR001.PNG', '2021-06-14 23:05:01', '2021-05-19 14:10:03', 0),
 ('STR002', 'irfan', 'coba11', 'muhammad irfan', 'muhammadirfan.9f@gmail.com', 5, 2, 'STR002.jpg', '2021-06-14 17:33:07', '2021-05-19 17:12:39', 0),
-('STR003', 'benben', 'bento', 'ben zoskan', 'bneks@gmail.com', 1, 2, 'STR003.jpg', '2021-06-14 18:42:35', '2021-06-10 09:42:27', 0),
-('STR004', 'ilham', 'ilham', 'ilham nur inzani', 'ilhamham@gmail.com', 7, 1, 'STR004.jpg', '2021-06-14 18:43:11', '2021-06-14 17:34:53', 0);
+('STR003', 'benben', 'bento', 'ben zoskan', 'bneks@gmail.com', 1, 2, 'STR003.jpg', '2021-06-14 23:00:10', '2021-06-10 09:42:27', 0),
+('STR004', 'ilham', 'ilham', 'ilham nur inzani', 'ilhamham@gmail.com', 7, 1, 'STR004.jpg', '2021-06-14 23:04:25', '2021-06-14 17:34:53', 0),
+('STR005', 'putri', 'putri', 'putri finance 1', 'financestarna1@gmail.com', 3, 2, 'STR005.jpg', '2021-06-14 23:05:59', '2021-06-14 23:05:46', 0);
 
 --
 -- Indexes for dumped tables
@@ -463,6 +505,12 @@ ALTER TABLE `invoice_item_spq`
 --
 ALTER TABLE `invoice_item_spq_2`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `invoice_out`
+--
+ALTER TABLE `invoice_out`
+  ADD PRIMARY KEY (`no_invoice`);
 
 --
 -- Indexes for table `position_item`
@@ -520,7 +568,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `invoice_in_item`
 --
 ALTER TABLE `invoice_in_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `invoice_item_local`
@@ -544,7 +592,7 @@ ALTER TABLE `invoice_item_luar_2`
 -- AUTO_INCREMENT for table `invoice_item_spq`
 --
 ALTER TABLE `invoice_item_spq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `invoice_item_spq_2`
@@ -556,13 +604,13 @@ ALTER TABLE `invoice_item_spq_2`
 -- AUTO_INCREMENT for table `po_item_itembase`
 --
 ALTER TABLE `po_item_itembase`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `po_item_wordbase`
 --
 ALTER TABLE `po_item_wordbase`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `quitation_item`
