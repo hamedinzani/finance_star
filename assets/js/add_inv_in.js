@@ -1,5 +1,4 @@
 $("#status").on('change', function(el) {
-    var id = "";
     volume = [];
 price = [];
 cost = [];
@@ -13,19 +12,8 @@ jum_table=0;
             async: false,
             dataType: 'json',
             success: function (data) {
-                try {
-                    id = data[0].project_Name;
-              console.log(id)
-              if(id!=''){
-                $('#pn').val(id);
-              for(i=0; i<data.length; i++){
-                addRow(btoa(JSON.stringify(data[i])));}
-              }
-              
-                 }
-                 catch (err) {
-                    console.log(err);
-                 }
+                for(i=0; i<data.length; i++){
+                    addRow(btoa(JSON.stringify(data[i])));}
             
     }
   
@@ -33,3 +21,32 @@ jum_table=0;
     } else {jum_table=0;addRow();$('#pn').val("");}
        
 });
+
+$("#no_rek").on('change', function(el) {
+    let ids = $(el.target).val();
+    console.log(ids);
+    change_table(ids);
+    hitung();
+});
+
+function change_table(ids=null){
+    if(ids=='1'||ids==null){
+        $('#swift').val('BBBAIDJA');
+        $('#acc').val('0701137302');
+    } else if (ids=='2'){
+        $('#swift').val('BBBAIDJA');
+        $('#acc').val('0902211411');
+    } else if (ids=='3'){
+        $('#swift').val('BBBAIDJA');
+        $('#acc').val('090 2212221');
+    } else if (ids=='4'){
+        $('#swift').val('');
+        $('#acc').val('3590119073');
+    } else if (ids=='5'){
+        $('#swift').val('');
+        $('#acc').val('financedept@bintang‐35.net');
+    } else {
+        $('#swift').val('');
+        $('#acc').val('');
+    }
+}

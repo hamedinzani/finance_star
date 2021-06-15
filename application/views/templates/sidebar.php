@@ -131,6 +131,11 @@
                         <i class="fas fa-file-invoice"></i>
                         <span>Invoice</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo base_url('freelance/invoice_item'); ?>">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Invoice Item</span></a>
+                </li>
             <?php } ?>
 
             <?php if ($userdata->id_Position == '5') { ?>
