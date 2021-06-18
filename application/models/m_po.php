@@ -31,6 +31,14 @@ class M_po extends CI_Model
         $this->db->where('po.no_Po', $where);
         return $query = $this->db->get();
     }
+    function ambil_dataitem_po_item($where)
+    {
+        $this->db->select('*');
+        $this->db->from('po_item_itembase qi');
+        $this->db->join('purchase_order q', 'qi.no_Po=q.no_Po', 'left');
+        $this->db->where('q.no_Po', $where);
+        return $query = $this->db->get();
+    }
 
     function ambil_data_po_word($where)
     {
@@ -41,15 +49,17 @@ class M_po extends CI_Model
         return $query = $this->db->get();
     }
 
-    function ambil_data_qi($where){
-		$this->db->select('*');
-        $this->db->from('quitation_item qi'); 
+    function ambil_data_qi($where)
+    {
+        $this->db->select('*');
+        $this->db->from('quitation_item qi');
         $this->db->join('quotation q', 'qi.no_Quotation=q.no_Quotation', 'left');
         $this->db->where('q.no_Quotation', $where);
-		return $query = $this->db->get();
-	}
+        return $query = $this->db->get();
+    }
 
-    public function CreateCode(){
+    public function CreateCode()
+    {
         $userdata = $this->session->userdata('user_logged');
         $level = $userdata->id_Status;
         $this->db->select('RIGHT(purchase_order.no_Po,4) as no_Po', FALSE);

@@ -120,11 +120,11 @@
     </form>
 <?php } ?>
 <script>
-  var item_list = [];
+    var item_list = [];
 
-  <?php
-    foreach($qi as $q) {
-      echo "item_list.push('".base64_encode(json_encode($q))."');".PHP_EOL;
+    <?php
+    foreach ($qi as $q) {
+        echo "item_list.push('" . base64_encode(json_encode($q)) . "');" . PHP_EOL;
     }
-  ?>
+    ?>
 </script>
